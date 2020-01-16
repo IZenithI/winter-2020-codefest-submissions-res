@@ -5,7 +5,7 @@
 ### Team members (format: GitHub username, last name, first name):
 - Hjiang4332, Jiang, Howard
 - IZenithI, Guo, Brian
-- 
+- therealarthur, Mouradian, Arthur
 -
 - 
 - 
