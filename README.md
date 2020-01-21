@@ -4,13 +4,8 @@
 ### Team name: Res
 ### Team members (format: GitHub username, last name, first name):
 - Hjiang4332, Jiang, Howard
-<<<<<<< HEAD
 - therealarthur, Mouradian, Arthur
-- 
-=======
 - IZenithI, Guo, Brian
-- therealarthur, Mouradian, Arthur
->>>>>>> 076d08fdf37e51293688163523e7dae9e2d1aebe
 -
 - 
 - 
