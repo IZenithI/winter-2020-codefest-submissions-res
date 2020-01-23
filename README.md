@@ -6,9 +6,9 @@
 - Hjiang4332, Jiang, Howard
 - therealarthur, Mouradian, Arthur
 - IZenithI, Guo, Brian
--
-- 
-- 
+- JasonMishiyev, Mishiyev, Jason
+- NathanRVazquez, Nathan, Vazquez
+- vilnytskyy, Ilnytskyy, Vasyl
 
 ### Group info (check all that apply - add an X in the [ ])
 - [ ] We are a CUNY2X bootcamp cohort team
