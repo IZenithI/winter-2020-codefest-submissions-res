@@ -19,8 +19,8 @@ class App extends React.Component {
 
     render() {
         return (
-            //<MapContainer />
-            <ul>
+            <MapContainer />
+            /*<ul>
                 {this.state.items.map(function(item, index){
                     return (
                         <div key = {index}>
@@ -29,7 +29,7 @@ class App extends React.Component {
                         </div>
                     )
                 })}
-            </ul>
+            </ul>*/
         );
     }
 }
