@@ -1,16 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MapContainer from './MapContainer';  //google maps
-
-class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <MapContainer />
-            </div>
-        );
-    }
-}
+import App from './App';
 
 ReactDOM.render(
     <App />, document.getElementById("root")

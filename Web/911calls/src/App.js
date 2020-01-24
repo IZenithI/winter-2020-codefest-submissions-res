@@ -1,26 +1,35 @@
 import React from 'react';
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-//import ImportAPI from './ImportAPI';
+import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 const mapStyles = {
     width: '100%',
     height: '100%',
 };
 
-  
+
 class MapContainer extends React.Component {
-    constructor(){
-        super()
-        this.state = { 
-            pins: [
-                // {lat:43.7, long:-70.9},
-                // {lat:45.7, long:-70.9},
-                // {lat:47.7, long:-70.9},
-                // {lat:49.7, long:-70.9},
-                // {lat:51.7, long:-70.9}
-            ]
-        };
+    state = {
+        showingInfoWindow: false,
+        activeMarker: {},
+        selectedPlace: {}
+      };
+    
+    onMarkerClick = (props, marker, e) =>{
+        this.setState({
+            selectedPlace: props,
+            activeMarker: marker,
+            showingInfoWindow: true
+        });
     }
+
+    onClose = (props) => {
+        if (this.state.showingInfoWindow) {
+            this.setState({
+            showingInfoWindow: false,
+            activeMarker: null
+            });
+        }
+    };
 
     // componentDidMount(){
     //     this.getPins();
@@ -47,7 +56,8 @@ class MapContainer extends React.Component {
             />;
         });
         // return < Marker position={{ lat: 43.7, lng: -70.9}} />;
-      }
+    }
+    
 
     render() {
         return (
@@ -57,14 +67,18 @@ class MapContainer extends React.Component {
                 style={mapStyles}
                 initialCenter={{ lat: 40.7, lng: -73.9 }} //increase lat, moves up increase lng moves right
             >
-               < Marker position={{ lat: 40.7, lng: -73.9}} /> 
-               {this.renderMarkers}
-
+                <Marker onClick={this.onMarkerClick} name= {'My House'} position={{ lat: 40.7, lng: -73.9}} /> 
+                
+                <InfoWindow
+                    marker={this.state.activeMarker}
+                    visible={this.state.showingInfoWindow}
+                    onClose={this.onClose}
+                >
+                    <div><h4>{this.state.selectedPlace.name}</h4></div>
+               </InfoWindow>
             </Map>
         );
-      }
-    
-    
+    }
 }
 
 export default GoogleApiWrapper({
