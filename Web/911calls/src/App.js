@@ -11,9 +11,20 @@ class MapContainer extends React.Component {
     state = {
         showingInfoWindow: false,
         activeMarker: {},
-        selectedPlace: {}
-      };
+        selectedPlace: {},
+        pins: []
+    };
     
+    componentDidMount(){
+        this.getPins();
+    }
+
+    getPins(){
+        fetch('https://data.cityofnewyork.us/resource/5uac-w243.json?')
+        .then(results => results.json())
+        .then(results => this.setState({pins: results}))
+    }
+
     onMarkerClick = (props, marker, e) =>{
         this.setState({
             selectedPlace: props,
@@ -31,35 +42,27 @@ class MapContainer extends React.Component {
         }
     };
 
-    // componentDidMount(){
-    //     this.getPins();
+    // renderMarkers() {
+    //     this.state.pins.map((pin, i) => {
+    //       return <Marker
+    //         key={ i }
+    //         // onClick = { this.onMarkerClick }
+    //         onClick = {console.log("clicked")}
+    //         // title = { pin.locName }
+    //         //position = { JSON.parse(pin.position) }
+    //         position={{ lat: pin.lat, lng: pin.long }}
+    //         // desc = { pin.desc }
+    //         // name = { pin.locName } 
+    //         // < Marker key={index} position={{ lat: pin.lat_lon.latitude, lng:pin.lat_lon.longitude}} />
+    //         />;
+    //     });
+    //     // return < Marker position={{ lat: 43.7, lng: -70.9}} />;
     // }
 
-    // getPins(){
-    //     fetch('https://data.cityofnewyork.us/resource/5uac-w243.json?')
-    //     .then(results => results.json())
-    //     .then(results => this.setState({pins: results}));
-    // }
-
-    renderMarkers() {
-        this.state.pins.map((pin, i) => {
-          return <Marker
-            key={ i }
-            // onClick = { this.onMarkerClick }
-            onClick = {console.log("clicked")}
-            // title = { pin.locName }
-            //position = { JSON.parse(pin.position) }
-            position={{ lat: pin.lat, lng: pin.long }}
-            // desc = { pin.desc }
-            // name = { pin.locName } 
-            // < Marker key={index} position={{ lat: pin.lat_lon.latitude, lng:pin.lat_lon.longitude}} />
-            />;
-        });
-        // return < Marker position={{ lat: 43.7, lng: -70.9}} />;
-    }
-    
 
     render() {
+        // console.log(this.state.pins)
+        console.log(this.state.pins[0]); 
         return (
             <Map
                 google={this.props.google}
