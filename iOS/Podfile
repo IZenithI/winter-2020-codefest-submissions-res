@@ -1,0 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, :deployment_target => "13.2"
+target 'Res Project' do
+  pod 'GoogleMaps'
+end
