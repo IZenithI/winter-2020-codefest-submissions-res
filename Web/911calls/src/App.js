@@ -8,22 +8,36 @@ const mapStyles = {
 
 
 class MapContainer extends React.Component {
-    state = {
-        showingInfoWindow: false,
-        activeMarker: {},
-        selectedPlace: {},
-        pins: []
-    };
+    constructor(){
+        super();
+        this.state = {
+            showingInfoWindow: false,
+            activeMarker: {},
+            selectedPlace: {},
+            pins: [],
+        };
+        this.getPins=this.getPins.bind(this);
+    }
     
     componentDidMount(){
-        this.getPins();
+         this.getPins();
     }
 
     getPins(){
         fetch('https://data.cityofnewyork.us/resource/5uac-w243.json?')
         .then(results => results.json())
-        .then(results => this.setState({pins: results}))
+        .then(data => this.setState({pins: data}))
     }
+
+    // componentDidMount() {
+    //     fetch('https://data.cityofnewyork.us/resource/5uac-w243.json?')
+    //     .then(res => res.json())
+    //     .then(data => {
+    //       this.setState({ pins: data })
+    //       console.log(this.state.pins)
+    //     })
+    //     .catch(console.log)
+    // }
 
     onMarkerClick = (props, marker, e) =>{
         this.setState({
@@ -61,8 +75,9 @@ class MapContainer extends React.Component {
 
 
     render() {
-        // console.log(this.state.pins)
-        console.log(this.state.pins[0]); 
+        // console.log(this.state.pins[0].boro_nm); 
+        this.state.pins.map(pin => console.log(this.state.pins[0].boro_nm))
+        
         return (
             <Map
                 google={this.props.google}
