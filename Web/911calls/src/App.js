@@ -15,10 +15,11 @@ const mapStyles = {
 
 class MapContainer extends React.Component {
     state = {
-        sideDrawerOpen: false,
         showingInfoWindow: false,
         activeMarker: {},
-        selectedPlace: {}
+        selectedPlace: {},
+        pins: [],
+        sideDrawerOpen: false
       };
 
     //Side Navigation Code
@@ -42,7 +43,7 @@ class MapContainer extends React.Component {
     getPins(){
         fetch('https://data.cityofnewyork.us/resource/5uac-w243.json?')
         .then(results => results.json())
-        .then(results => this.setState({pins: results}))
+        .then(data => this.setState({pins: data}))
     }
 
     onMarkerClick = (props, marker, e) =>{
@@ -81,14 +82,15 @@ class MapContainer extends React.Component {
 
 
     render() {
-        // Side Navigation code
+        // Side Navigation 
         let backdrop;
         if (this.state.sideDrawerOpen) {
             backdrop = <Backdrop click={this.backdropClickHandler} />;
         }
-        // End Side Navigation code
-        // console.log(this.state.pins)
-        // console.log(this.state.pins[0]); 
+        
+        this.state.pins.map(pin => console.log(this.state.pins[0].boro_nm))
+        // this.state.pins.map(pin => <Marker />)
+
         return (
             //Side Nav code
             <div style={{ height: '100%' }}>
