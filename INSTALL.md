@@ -1,6 +1,6 @@
 For the React website, download the repo and open up your terminal. cd into the winter.../web/911Calls folder. Make sure you have node installed and do npm install then npm start.
 
-For the ios App, have a mac or MACOS installed, then:
+For the ios App, have a mac or MACOS installed with XCode, then: Download iOS repo and open 'Res Project.xcworkspace' with XCode and run the simulator on the top left.
 
 For the Android App, do this
 
