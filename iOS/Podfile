@@ -1,0 +1,7 @@
+source 'https://cdn.cocoapods.org/'
+platform :ios, '9.0'
+
+target 'ResProj' do
+  pod 'GoogleMaps'
+  pod 'Google-Maps-iOS-Utils', :path => '..'
+end
