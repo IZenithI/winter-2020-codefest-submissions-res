@@ -5,7 +5,7 @@ import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 
-import AboutMe from './AboutMe';
+import AboutMe from './AboutMe/AboutMe';
 
 export default class App extends React.Component {
     constructor(){
@@ -15,7 +15,7 @@ export default class App extends React.Component {
             sideDrawerOpen: false,
 
             //content
-            renderingMap: true
+            renderingMap: false //change this back later
         };
     }
 
