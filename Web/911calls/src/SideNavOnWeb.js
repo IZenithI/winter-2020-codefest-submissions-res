@@ -1,21 +1,15 @@
-import React from 'react';
-import MapContainer from './MapContainer'
-
+import React from '.react';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 
-import AboutMe from './AboutMe';
 
-export default class App extends React.Component {
+class SideNavOnWeb extends React.Component{
     constructor(){
         super()
         this.state = {
             //navbar
             sideDrawerOpen: false,
-
-            //content
-            renderingMap: true
         };
     }
 
@@ -28,15 +22,6 @@ export default class App extends React.Component {
     backdropClickHandler = () => {
         this.setState({ sideDrawerOpen: false });
     };
-    
-    renderContent(){
-        if(this.state.renderingMap){
-            return <MapContainer />
-        }else{
-            return <AboutMe />
-        }
-    }
-
 
     render() {
         let backdrop;
@@ -54,9 +39,13 @@ export default class App extends React.Component {
                 /> 
                 {backdrop}
                 <main style={{ marginTop: '30px' }}>
-                    {this.renderContent()}
+
+                    {/* {this.props.content()} */}
+
                 </main>
             </div>
         );
     }
 }
+
+export default SideNavOnWeb;

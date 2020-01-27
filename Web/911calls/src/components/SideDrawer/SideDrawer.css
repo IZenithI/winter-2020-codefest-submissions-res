@@ -18,6 +18,9 @@
 
 .side-drawer li {
     margin: 0.5rem 0;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
 }
 
 .side-drawer ul {
