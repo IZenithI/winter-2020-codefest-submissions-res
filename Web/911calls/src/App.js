@@ -11,13 +11,17 @@ const mapStyles = {
 
 
 class MapContainer extends React.Component {
-    state = {
-        showingInfoWindow: false,
-        activeMarker: {},
-        selectedPlace: {},
-        pins: [],
-        sideDrawerOpen: false
-      };
+    constructor(){
+        super()
+        this.state = {
+            showingInfoWindow: false,
+            activeMarker: {},
+            selectedPlace: {},
+            pins: [],
+            sideDrawerOpen: false
+        };
+        this.renderMarkers = this.renderMarkers.bind(this);
+    }
 
     //Side Navigation Code
     drawerToggleClickHandler = () => {
@@ -29,10 +33,10 @@ class MapContainer extends React.Component {
         this.setState({ sideDrawerOpen: false });
     };
     
+
     componentDidMount(){
         this.getPins();
     }
-
     getPins(){
         fetch('https://data.cityofnewyork.us/resource/5uac-w243.json?')
         .then(results => results.json())
@@ -46,19 +50,18 @@ class MapContainer extends React.Component {
             showingInfoWindow: true
         });
     }
-
     onClose = (props) => {
         if (this.state.showingInfoWindow) {
             this.setState({
-            showingInfoWindow: false,
-            activeMarker: null
+                showingInfoWindow: false,
+                activeMarker: null
             });
         }
     };
 
     renderMarkers() {
         this.state.pins.map((pin, i) => {
-          return <Marker
+            return <Marker
             key={ i }
             onClick = { this.onMarkerClick }
             // title = { pin.locName }
@@ -78,10 +81,16 @@ class MapContainer extends React.Component {
             backdrop = <Backdrop click={this.backdropClickHandler} />;
         }
         
-        // this.state.pins.map(pin => console.log(this.state.pins[0].latitude))
-        // this.state.pins.map(pin => <Marker />)
         const markers = this.state.pins.map((pin, i) => {
-            return <Marker key={i} position={{lat:pin.latitude, lng:pin.longitude}}/>
+            return <Marker 
+                key = { i } 
+                onClick = { this.onMarkerClick }
+                name = { pin.ofns_desc }
+                date = { pin.cmplnt_fr_dt }
+                levelOfOffense = { pin.law_cat_cd }
+                didComplete = { pin.crm_atpt_cptd_cd }
+                position={{ lat:pin.latitude, lng:pin.longitude }}
+            />
         })
 
         return (
@@ -96,7 +105,6 @@ class MapContainer extends React.Component {
                         style={mapStyles}
                         initialCenter={{ lat: 40.7, lng: -73.9 }} //increase lat, moves up increase lng moves right
                         >
-                        {/* <Marker onClick={this.onMarkerClick} name= {'My House'} position={{ lat: 40.7, lng: -73.9}} />  */}
 
                         {markers}
                         
@@ -105,8 +113,13 @@ class MapContainer extends React.Component {
                             visible={this.state.showingInfoWindow}
                             onClose={this.onClose}
                             >
-                            <div><h4>{this.state.selectedPlace.name}</h4></div>
-                    </InfoWindow>
+                            <div>
+                                <h1>{this.state.selectedPlace.name}</h1>
+                                <h4>
+                                    Occurring on { this.state.selectedPlace.date }, this { this.state.selectedPlace.levelOfOffense } was { this.state.selectedPlace.didComplete }.
+                                </h4>
+                            </div>
+                        </InfoWindow>
                     </Map>
                 </main>
             </div>
