@@ -15,7 +15,7 @@ export default class App extends React.Component {
             sideDrawerOpen: false,
 
             //content
-            renderingMap: false //change this back later
+            renderingMap: true 
         };
     }
 
