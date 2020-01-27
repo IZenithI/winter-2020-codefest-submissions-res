@@ -1,0 +1,6 @@
+module Pods_ResProj {
+  umbrella header "Pods-ResProj-umbrella.h"
+
+  export *
+  module * { export * }
+}
