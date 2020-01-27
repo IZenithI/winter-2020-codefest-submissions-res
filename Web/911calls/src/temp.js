@@ -12,14 +12,13 @@ const mapStyles = {
 
 class MapContainer extends React.Component {
     state = {
+        sideDrawerOpen: false,
         showingInfoWindow: false,
         activeMarker: {},
         selectedPlace: {},
-        pins: [],
-        sideDrawerOpen: false
-      };
-
-    //Side Navigation Code
+        pins: []
+    };
+      
     drawerToggleClickHandler = () => {
         this.setState((prevState) => {
             return { sideDrawerOpen: !prevState.sideDrawerOpen };
@@ -28,7 +27,7 @@ class MapContainer extends React.Component {
     backdropClickHandler = () => {
         this.setState({ sideDrawerOpen: false });
     };
-    
+
     componentDidMount(){
         this.getPins();
     }
@@ -46,7 +45,6 @@ class MapContainer extends React.Component {
             showingInfoWindow: true
         });
     }
-
     onClose = (props) => {
         if (this.state.showingInfoWindow) {
             this.setState({
@@ -56,20 +54,22 @@ class MapContainer extends React.Component {
         }
     };
 
-    renderMarkers() {
-        this.state.pins.map((pin, i) => {
-          return <Marker
-            key={ i }
-            onClick = { this.onMarkerClick }
-            // title = { pin.locName }
-            //position = { JSON.parse(pin.position) }
-            // position={{ lat: pin.lat, lng: pin.long }}
-            position={{ lat: pin.latitude, lng: pin.longitude}}
-            // desc = { pin.desc }
-            // name = { pin.locName } 
-            />;
-        });
-    }
+    // renderMarkers() {
+    //     this.state.pins.map((pin, i) => {
+    //         return 
+    //         <Marker
+    //             key={ i }
+    //             onClick = { this.onMarkerClick }
+    //             // title = { pin.locName }
+    //             //position = { JSON.parse(pin.position) }
+    //             // position={{ lat: pin.lat, lng: pin.long }}
+    //             position={{ lat: this.state.pins[i].latitude, lng: this.state.pins[i].longitude}}
+    //             // desc = { pin.desc }
+    //             // name = { pin.locName } 
+    //             // < Marker key={index} position={{ lat: pin.lat_lon.latitude, lng:pin.lat_lon.longitude}} />
+    //         />;
+    //     });
+    // }
 
 
     render() {
@@ -77,18 +77,15 @@ class MapContainer extends React.Component {
         if (this.state.sideDrawerOpen) {
             backdrop = <Backdrop click={this.backdropClickHandler} />;
         }
-        
-        // this.state.pins.map(pin => console.log(this.state.pins[0].latitude))
-        // this.state.pins.map(pin => <Marker />)
-        const markers = this.state.pins.map((pin, i) => {
-            return <Marker key={i} position={{lat:pin.latitude, lng:pin.longitude}}/>
-        })
+
+        // this.state.pins.map(pin => console.log(this.state.pins[0].boro_nm)); 
 
         return (
             <div style={{ height: '100%' }}>
                 <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-                <SideDrawer show={this.state.sideDrawerOpen} /> ;
+                <SideDrawer show={this.state.sideDrawerOpen} /> 
                 {backdrop}
+
                 <main style={{ marginTop: '30px' }}>
                     <Map
                         google={this.props.google}
@@ -96,9 +93,9 @@ class MapContainer extends React.Component {
                         style={mapStyles}
                         initialCenter={{ lat: 40.7, lng: -73.9 }} //increase lat, moves up increase lng moves right
                         >
-                        {/* <Marker onClick={this.onMarkerClick} name= {'My House'} position={{ lat: 40.7, lng: -73.9}} />  */}
 
-                        {markers}
+                        {/* <Marker onClick={this.onMarkerClick} name= {'My House'} position={{ lat: 40.7, lng: -73.9}} />  */}
+                        {/* {this.renderMarkers()}; */}
                         
                         <InfoWindow
                             marker={this.state.activeMarker}
@@ -106,7 +103,7 @@ class MapContainer extends React.Component {
                             onClose={this.onClose}
                             >
                             <div><h4>{this.state.selectedPlace.name}</h4></div>
-                    </InfoWindow>
+                        </InfoWindow>
                     </Map>
                 </main>
             </div>
