@@ -1,5 +1,8 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+
+// import Result from './result.json';
+
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop'
@@ -18,9 +21,10 @@ class MapContainer extends React.Component {
             activeMarker: {},
             selectedPlace: {},
             pins: [],
+
+            //navbar
             sideDrawerOpen: false
         };
-        this.renderMarkers = this.renderMarkers.bind(this);
     }
 
     //Side Navigation Code
@@ -33,15 +37,20 @@ class MapContainer extends React.Component {
         this.setState({ sideDrawerOpen: false });
     };
     
-
     componentDidMount(){
-        this.getPins();
+        this.getPinsFromApi();
+        // this.getPinsFromJson();
     }
-    getPins(){
+    getPinsFromApi(){
         fetch('https://data.cityofnewyork.us/resource/5uac-w243.json?')
         .then(results => results.json())
-        .then(data => this.setState({pins: data}))
+        .then(data => this.setState({ pins: data }))
     }
+    // getPinsFromJson = () => {
+    //     this.setState({
+    //         pins: Result
+    //     })
+    // }
 
     onMarkerClick = (props, marker, e) =>{
         this.setState({
@@ -59,19 +68,19 @@ class MapContainer extends React.Component {
         }
     };
 
-    renderMarkers() {
-        this.state.pins.map((pin, i) => {
-            return <Marker
-            key={ i }
-            onClick = { this.onMarkerClick }
-            // title = { pin.locName }
-            //position = { JSON.parse(pin.position) }
-            // position={{ lat: pin.lat, lng: pin.long }}
-            position={{ lat: pin.latitude, lng: pin.longitude}}
-            // desc = { pin.desc }
-            // name = { pin.locName } 
-            />;
-        });
+    renderMarkers = () => {
+        let pins = this.state.pins.map((pin, i) => {
+            return <Marker 
+                key = { i } 
+                onClick = { this.onMarkerClick }
+                name = { pin.ofns_desc }
+                date = { pin.cmplnt_fr_dt }
+                levelOfOffense = { pin.law_cat_cd }
+                didComplete = { pin.crm_atpt_cptd_cd }
+                position = {{ lat:pin.latitude, lng:pin.longitude }}
+            />
+        })
+        return pins;
     }
 
 
@@ -80,18 +89,6 @@ class MapContainer extends React.Component {
         if (this.state.sideDrawerOpen) {
             backdrop = <Backdrop click={this.backdropClickHandler} />;
         }
-        
-        const markers = this.state.pins.map((pin, i) => {
-            return <Marker 
-                key = { i } 
-                onClick = { this.onMarkerClick }
-                name = { pin.ofns_desc }
-                date = { pin.cmplnt_fr_dt }
-                levelOfOffense = { pin.law_cat_cd }
-                didComplete = { pin.crm_atpt_cptd_cd }
-                position={{ lat:pin.latitude, lng:pin.longitude }}
-            />
-        })
 
         return (
             <div style={{ height: '100%' }}>
@@ -106,7 +103,7 @@ class MapContainer extends React.Component {
                         initialCenter={{ lat: 40.7, lng: -73.9 }} //increase lat, moves up increase lng moves right
                         >
 
-                        {markers}
+                        { this.renderMarkers() }
                         
                         <InfoWindow
                             marker={this.state.activeMarker}
