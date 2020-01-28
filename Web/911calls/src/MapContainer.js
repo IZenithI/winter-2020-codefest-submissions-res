@@ -1,18 +1,16 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
-import Sort from './components/SideDrawer/SideDrawer';
-
 const mapStyles = {
     width: '100%',
     height: '100%',
     marginTop: 20,
-    marginLeft: -7
+    // marginLeft: -7
 };
 
 class MapContainer extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
@@ -21,22 +19,23 @@ class MapContainer extends React.Component{
         };
     }
 
-    componentDidMount(){
+    componentDidMount = () => {
         this.getPinsFromApi();
         // this.getPinsFromJson();
     }
-    getPinsFromApi(){
+    getPinsFromApi = () => {
         fetch('https://data.cityofnewyork.us/resource/5uac-w243.json?')
         .then(results => results.json())
         .then(data => this.setState({ pins: data }))
     }
+
     // getPinsFromJson = () => {
     //     this.setState({
     //         pins: Result
     //     })
     // }
 
-    onMarkerClick = (props, marker, e) =>{
+    onMarkerClick = (props, marker, e) => {
         this.setState({
             selectedPlace: props,
             activeMarker: marker,
@@ -52,7 +51,8 @@ class MapContainer extends React.Component{
         }
     };
 
-    renderMarkers = () => {
+    renderMarkers = (props) => {
+        console.log(this.props.whichMap);
         let pins = this.state.pins.map((pin, i) => {
             return <Marker 
                 key = { i } 
@@ -66,6 +66,7 @@ class MapContainer extends React.Component{
         })
         return pins;
     }
+    
     render(){
         return <Map
             google={this.props.google}
@@ -91,6 +92,7 @@ class MapContainer extends React.Component{
         </Map>
     }
 }
+
 export default GoogleApiWrapper({
     apiKey: 'AIzaSyC91naZ4TM0LlmSTRqEUIYz7ak-JDbL3us '
 }) (MapContainer);

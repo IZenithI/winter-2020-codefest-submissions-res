@@ -12,7 +12,7 @@ const sideDrawer = props => {
                 <a onClick = {() => props.toggleMap()}>Map</a>
                 <select class="ui dropdown">
                     <option value="">Sort</option>
-                    <option value="0">Attack helecopter</option>
+                    <option value="0" onClick ={() => props.changeMapFelony()}>Felony</option>
                     <option value="1">Male</option>
                     <option value="2">Female</option>
                 </select>
