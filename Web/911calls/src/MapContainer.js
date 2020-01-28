@@ -1,6 +1,8 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
+import Sort from './components/SideDrawer/SideDrawer';
+
 const mapStyles = {
     width: '100%',
     height: '100%',

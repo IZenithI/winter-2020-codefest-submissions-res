@@ -5,7 +5,7 @@ import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 
-import AboutMe from './AboutMe/AboutMe';
+import AboutMe from './components/AboutMe/AboutMe';
 
 export default class App extends React.Component {
     constructor(){
@@ -29,6 +29,7 @@ export default class App extends React.Component {
         this.setState({ sideDrawerOpen: false });
     };
     
+    //render map or about me
     renderContent(){
         if(this.state.renderingMap){
             return <MapContainer />

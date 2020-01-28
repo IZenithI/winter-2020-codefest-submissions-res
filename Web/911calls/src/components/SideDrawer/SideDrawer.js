@@ -10,7 +10,12 @@ const sideDrawer = props => {
         <nav className={drawerClasses}>
             <ul>
                 <a onClick = {() => props.toggleMap()}>Map</a>
-                <a>Sort</a>
+                <select class="ui dropdown">
+                    <option value="">Sort</option>
+                    <option value="0">Attack helecopter</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select>
                 <a onClick = {() => props.toggleAboutMe()}>Meet The Team</a>
             </ul>
         </nav>
