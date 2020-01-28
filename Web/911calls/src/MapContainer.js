@@ -52,9 +52,20 @@ class MapContainer extends React.Component{
     };
 
     renderMarkers = (props) => {
-        console.log(this.props.whichMap);
         let pins = this.state.pins.map((pin, i) => {
-            return <Marker 
+            if(this.props.whichMap == "default"){
+                return <Marker 
+                    key = { i } 
+                    onClick = { this.onMarkerClick }
+                    name = { pin.ofns_desc }
+                    date = { pin.cmplnt_fr_dt }
+                    levelOfOffense = { pin.law_cat_cd }
+                    didComplete = { pin.crm_atpt_cptd_cd }
+                    position = {{ lat:pin.latitude, lng:pin.longitude }}
+                />
+            }
+            else if(this.props.whichMap == pin.law_cat_cd){
+                return <Marker 
                 key = { i } 
                 onClick = { this.onMarkerClick }
                 name = { pin.ofns_desc }
@@ -62,12 +73,15 @@ class MapContainer extends React.Component{
                 levelOfOffense = { pin.law_cat_cd }
                 didComplete = { pin.crm_atpt_cptd_cd }
                 position = {{ lat:pin.latitude, lng:pin.longitude }}
-            />
+                />
+            }
         })
         return pins;
     }
     
     render(){
+        {console.log(this.props.whichMap)}
+
         return <Map
             google={this.props.google}
             zoom={12}
@@ -75,8 +89,7 @@ class MapContainer extends React.Component{
             initialCenter={{ lat: 40.7, lng: -73.9 }} //increase lat, moves up increase lng moves right
             >
 
-            { this.renderMarkers() }
-            
+            { this.renderMarkers() }            
             <InfoWindow
                 marker={this.state.activeMarker}
                 visible={this.state.showingInfoWindow}

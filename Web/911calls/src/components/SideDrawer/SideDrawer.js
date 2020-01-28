@@ -11,10 +11,10 @@ const sideDrawer = props => {
             <ul>
                 <a onClick = {() => props.toggleMap()}>Map</a>
                 <select class="ui dropdown">
-                    <option value="">Sort</option>
-                    <option value="0" onClick ={() => props.changeMapFelony()}>Felony</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
+                    <option value="" onClick = {() => props.changeMapDefault()}> Default (everything) </option>
+                    <option value="1" onClick = {() => props.changeMapMisdemeanor()}> Misdemeanor (small) </option>
+                    <option value="2" onClick = {() => props.changeMapFelony()}> Felony (medium) </option>
+                    <option value="3" onClick = {() => props.changeMapViolation()}> Violation (large) </option>
                 </select>
                 <a onClick = {() => props.toggleAboutMe()}>Meet The Team</a>
             </ul>

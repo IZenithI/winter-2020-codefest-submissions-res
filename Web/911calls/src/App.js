@@ -35,13 +35,7 @@ export default class App extends React.Component {
     //render map or about me
     renderContent(){
         if(this.state.renderingMap){
-            if(this.state.displayWhichMap === 'default') {
-                return <MapContainer />;
-            }
-            else if(this.state.displayWhichMap === 'felony'){
-                console.log(this.displayWhichMap)
-                return <MapContainer whichMap = {this.displayWhichMap} />
-            }
+            return <MapContainer whichMap = {this.state.displayWhichMap}/>;
         }else{
             return <AboutMe />;
         }
@@ -59,9 +53,12 @@ export default class App extends React.Component {
                 <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
                 <SideDrawer 
                     show={this.state.sideDrawerOpen} 
-                    toggleMap= {()=> this.setState({renderingMap : true})}
-                    toggleAboutMe= {()=> this.setState({renderingMap : false})}
-                    changeMapFelony= {() => this.setState({ displayWhichMap : 'felony' })}
+                    toggleMap= {()=> this.setState({ renderingMap : true})}
+                    toggleAboutMe= {()=> this.setState({ renderingMap : false})}
+                    changeMapDefault= {() => this.setState({ displayWhichMap : "default" })}
+                    changeMapMisdemeanor= {() => this.setState({ displayWhichMap : "MISDEMEANOR" })}
+                    changeMapFelony= {() => this.setState({ displayWhichMap : "FELONY" })}
+                    changeMapViolation= {() => this.setState({ displayWhichMap : "VIOLATION" })}
                 /> 
                 {backdrop}
                 <main style={{ marginTop: '30px' }}>
