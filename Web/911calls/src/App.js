@@ -54,7 +54,7 @@ export default class App extends React.Component {
                     toggleAboutMe={()=> this.setState({renderingMap : false})}
                 /> 
                 {backdrop}
-                <main style={{ marginTop: '30px' }}>
+                <main style={{overflowY: 'hidden' }}>
                     {this.renderContent()}
                 </main>
             </div>

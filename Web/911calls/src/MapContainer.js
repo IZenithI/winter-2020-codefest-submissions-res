@@ -4,10 +4,11 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import Sort from './components/SideDrawer/SideDrawer';
 
 const mapStyles = {
+    position: 'absolute',
     width: '100%',
-    height: '100%',
-    marginTop: 20,
-    marginLeft: -7
+    marginTop: 56,
+    height: '91.8%',
+    //marginLeft: -7
 };
 
 class MapContainer extends React.Component{
