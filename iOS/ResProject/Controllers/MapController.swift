@@ -51,7 +51,7 @@ class MapController: UIViewController, GMSMapViewDelegate {
     }
     
     func configureNavigationBar() {
-        navigationController?.navigationBar.barTintColor = .lightGray
+        navigationController?.navigationBar.barTintColor = .red
         navigationController?.navigationBar.barStyle = .default
         
         navigationItem.title = "Heatmap"

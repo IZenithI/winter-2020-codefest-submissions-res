@@ -875,6 +875,7 @@ GameObject:
   - component: {fileID: 1726643189}
   - component: {fileID: 1726643188}
   - component: {fileID: 1726643193}
+  - component: {fileID: 1726643194}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1030,6 +1031,20 @@ MonoBehaviour:
     type: 3}
   projectileSpeed: 10
   projectileFiringPeriod: 0.3
+--- !u!114 &1726643194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726643187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f96595e15fbad409092c9a081e154f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  isGrounded: 0
 --- !u!1 &1761471228
 GameObject:
   m_ObjectHideFlags: 0
