@@ -1,13 +1,15 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+// import PoliceDepartments from './PoliceDepartments.json';
 
 const mapStyles = {
-    width: '100%',
-    height: '100%',
-    marginTop: 20,
-    // marginLeft: -7
-};
+    position: 'absolute',
+    width: '100vw',
+    marginTop: 56,
+    height: '92.5vh',
+    //marginLeft: -7
 
+}
 class MapContainer extends React.Component{
     constructor(props){
         super(props)
@@ -16,12 +18,13 @@ class MapContainer extends React.Component{
             activeMarker: {},
             selectedPlace: {},
             pins: [],
+            // policePins: []
         };
     }
 
     componentDidMount = () => {
         this.getPinsFromApi();
-        // this.getPinsFromJson();
+        // this.getPinsFromPoliceJson();
     }
     getPinsFromApi = () => {
         fetch('https://data.cityofnewyork.us/resource/5uac-w243.json?')
@@ -35,6 +38,22 @@ class MapContainer extends React.Component{
     //     })
     // }
 
+    // getPinsFromPoliceJson = () => {
+    //     let tempPins = PoliceDepartments.map(departentInfo => {
+    //         return <Marker 
+    //             key = { i }
+    //             onClick = { this.onMarkerClick }
+    //             name = { departmentInfo.name }
+    //             address = { departmentInfo.address }
+    //             position = {{ lat:departmentInfo.latitude, lng:departmentInfo.longitude }}
+    //         />
+    //     })
+    //     this.setState({
+    //         policePins: tempPins;
+    //     })
+        
+    // }
+
     onMarkerClick = (props, marker, e) => {
         this.setState({
             selectedPlace: props,
@@ -42,7 +61,7 @@ class MapContainer extends React.Component{
             showingInfoWindow: true
         });
     }
-    onClose = (props) => {
+    onClose = () => {
         if (this.state.showingInfoWindow) {
             this.setState({
                 showingInfoWindow: false,
@@ -53,7 +72,7 @@ class MapContainer extends React.Component{
 
     renderMarkers = (props) => {
         let pins = this.state.pins.map((pin, i) => {
-            if(this.props.whichMap == "default"){
+            if(this.props.whichMap === "default"){
                 return <Marker 
                     key = { i } 
                     onClick = { this.onMarkerClick }
@@ -64,7 +83,7 @@ class MapContainer extends React.Component{
                     position = {{ lat:pin.latitude, lng:pin.longitude }}
                 />
             }
-            else if(this.props.whichMap == pin.law_cat_cd){
+            else if(this.props.whichMap === pin.law_cat_cd){
                 return <Marker 
                 key = { i } 
                 onClick = { this.onMarkerClick }
@@ -78,10 +97,12 @@ class MapContainer extends React.Component{
         })
         return pins;
     }
+
+    // renderInfoGraphicsText = (props) => {
+
+    // }
     
     render(){
-        {console.log(this.props.whichMap)}
-
         return <Map
             google={this.props.google}
             zoom={12}
@@ -89,7 +110,9 @@ class MapContainer extends React.Component{
             initialCenter={{ lat: 40.7, lng: -73.9 }} //increase lat, moves up increase lng moves right
             >
 
-            { this.renderMarkers() }            
+            { this.renderMarkers() }  
+            {/* { this.getPinsFromJson() } */}
+
             <InfoWindow
                 marker={this.state.activeMarker}
                 visible={this.state.showingInfoWindow}
