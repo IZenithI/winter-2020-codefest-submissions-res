@@ -9,9 +9,14 @@ const sideDrawer = props => {
    return (
         <nav className={drawerClasses}>
             <ul>
-                <li><a href="/">Map</a></li>
-                <li><a href="/">Analytics</a></li>
-                <li><a href="/">Meet The Team</a></li>
+                <a onClick = {() => props.toggleMap()}>Map</a>
+                <select class="ui dropdown">
+                    <option value="" onClick = {() => props.changeMapDefault()}> Default (everything) </option>
+                    <option value="1" onClick = {() => props.changeMapMisdemeanor()}> Misdemeanor (small) </option>
+                    <option value="2" onClick = {() => props.changeMapFelony()}> Felony (medium) </option>
+                    <option value="3" onClick = {() => props.changeMapViolation()}> Violation (large) </option>
+                </select>
+                <a onClick = {() => props.toggleAboutMe()}>Meet The Team</a>
             </ul>
         </nav>
     );
