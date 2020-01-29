@@ -61,7 +61,7 @@ export default class App extends React.Component {
                     changeMapViolation= {() => this.setState({ displayWhichMap : "VIOLATION" })}
                 /> 
                 {backdrop}
-                <main style={{ marginTop: '30px' }}>
+                <main style={{overflowY: 'hidden' }}>
                     {this.renderContent()}
                 </main>
             </div>
