@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		086BF28272DCF2F11865E9B7 /* libPods-ResProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1EDCA80AEE3ED5A226B3E0 /* libPods-ResProj.a */; };
+		D3541C8423E203D3002016D6 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = D3541C8323E203D3002016D6 /* Data */; };
 		D3A2FF3C23DE428200B76985 /* Complain-Data-LatLng.json in Resources */ = {isa = PBXBuildFile; fileRef = D3A2FF3B23DE428200B76985 /* Complain-Data-LatLng.json */; };
 		D3A2FF4223DE8F1700B76985 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A2FF4123DE8F1700B76985 /* ContainerController.swift */; };
 		D3A2FF4423DE8F7000B76985 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A2FF4323DE8F7000B76985 /* MenuController.swift */; };
@@ -27,6 +28,7 @@
 		0E1EDCA80AEE3ED5A226B3E0 /* libPods-ResProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A3FCB66D6DC29A9844CC757 /* Pods-ResProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResProj.debug.xcconfig"; path = "Target Support Files/Pods-ResProj/Pods-ResProj.debug.xcconfig"; sourceTree = "<group>"; };
 		8743E003077ABD085540DB3C /* Pods-ResProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResProj.release.xcconfig"; path = "Target Support Files/Pods-ResProj/Pods-ResProj.release.xcconfig"; sourceTree = "<group>"; };
+		D3541C8323E203D3002016D6 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../../Data; sourceTree = "<group>"; };
 		D3A2FF3B23DE428200B76985 /* Complain-Data-LatLng.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Complain-Data-LatLng.json"; sourceTree = "<group>"; };
 		D3A2FF4123DE8F1700B76985 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
 		D3A2FF4323DE8F7000B76985 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				D3AAC6A423DD53070084FF6D /* Podfile */,
+				D3541C8323E203D3002016D6 /* Data */,
 				D3A2FF7723DEABF300B76985 /* Utils */,
 				D3A2FF7823DEABF800B76985 /* View */,
 				D3A2FF8123DEBD1900B76985 /* Model */,
@@ -208,6 +211,7 @@
 			files = (
 				D3AAC69D23DD52C20084FF6D /* LaunchScreen.storyboard in Resources */,
 				D3AAC69A23DD52C20084FF6D /* Assets.xcassets in Resources */,
+				D3541C8423E203D3002016D6 /* Data in Resources */,
 				D3AAC6A523DD53070084FF6D /* Podfile in Resources */,
 				D3A2FF3C23DE428200B76985 /* Complain-Data-LatLng.json in Resources */,
 				D3AAC69823DD52BB0084FF6D /* Main.storyboard in Resources */,
