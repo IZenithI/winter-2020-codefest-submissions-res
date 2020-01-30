@@ -98,10 +98,10 @@ TextureImporter:
         serializedVersion: 2
         x: 143
         y: 258
-        width: 177
-        height: 613
+        width: 58
+        height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -109,27 +109,6 @@ TextureImporter:
       bones: []
       spriteID: 5847d621238523e40865033f65891b97
       internalID: 105169053199506356
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: projectile_1
-      rect:
-        serializedVersion: 2
-        x: 812
-        y: 413
-        width: 42
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb7ae6976c8f432479e60affb92692ef
-      internalID: -3209795618878514358
       vertices: []
       indices: 
       edges: []

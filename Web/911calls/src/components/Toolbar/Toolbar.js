@@ -10,7 +10,7 @@ const toolbar = props => (
             <div>
                 <DrawerToggleButton click={props.drawerClickHandler}/>
             </div>
-            <div className="toolbar_logo"><a href="/">R LOGO HERE</a></div>
+            <div className="toolbar_logo"><a href="/">Res</a></div>
             <div className="spacer"></div>
             <div className="toolbar_navigation-items">
                 {/* <ul>

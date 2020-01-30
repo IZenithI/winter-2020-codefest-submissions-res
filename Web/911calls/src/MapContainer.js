@@ -1,47 +1,67 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+// import PoliceDepartments from './PoliceDepartments.json';
 
 const mapStyles = {
-    width: '100%',
-    height: '100%',
-    marginTop: 20,
-    marginLeft: -7
-};
+    position: 'absolute',
+    width: '100vw',
+    marginTop: 56,
+    height: '92.5vh',
+    //marginLeft: -7
 
+}
 class MapContainer extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
             selectedPlace: {},
             pins: [],
+            // policePins: []
         };
     }
 
-    componentDidMount(){
+    componentDidMount = () => {
         this.getPinsFromApi();
-        // this.getPinsFromJson();
+        // this.getPinsFromPoliceJson();
     }
-    getPinsFromApi(){
+    getPinsFromApi = () => {
         fetch('https://data.cityofnewyork.us/resource/5uac-w243.json?')
         .then(results => results.json())
         .then(data => this.setState({ pins: data }))
     }
+
     // getPinsFromJson = () => {
     //     this.setState({
     //         pins: Result
     //     })
     // }
 
-    onMarkerClick = (props, marker, e) =>{
+    // getPinsFromPoliceJson = () => {
+    //     let tempPins = PoliceDepartments.map(departentInfo => {
+    //         return <Marker 
+    //             key = { i }
+    //             onClick = { this.onMarkerClick }
+    //             name = { departmentInfo.name }
+    //             address = { departmentInfo.address }
+    //             position = {{ lat:departmentInfo.latitude, lng:departmentInfo.longitude }}
+    //         />
+    //     })
+    //     this.setState({
+    //         policePins: tempPins;
+    //     })
+        
+    // }
+
+    onMarkerClick = (props, marker, e) => {
         this.setState({
             selectedPlace: props,
             activeMarker: marker,
             showingInfoWindow: true
         });
     }
-    onClose = (props) => {
+    onClose = () => {
         if (this.state.showingInfoWindow) {
             this.setState({
                 showingInfoWindow: false,
@@ -50,9 +70,21 @@ class MapContainer extends React.Component{
         }
     };
 
-    renderMarkers = () => {
+    renderMarkers = (props) => {
         let pins = this.state.pins.map((pin, i) => {
-            return <Marker 
+            if(this.props.whichMap === "default"){
+                return <Marker 
+                    key = { i } 
+                    onClick = { this.onMarkerClick }
+                    name = { pin.ofns_desc }
+                    date = { pin.cmplnt_fr_dt }
+                    levelOfOffense = { pin.law_cat_cd }
+                    didComplete = { pin.crm_atpt_cptd_cd }
+                    position = {{ lat:pin.latitude, lng:pin.longitude }}
+                />
+            }
+            else if(this.props.whichMap === pin.law_cat_cd){
+                return <Marker 
                 key = { i } 
                 onClick = { this.onMarkerClick }
                 name = { pin.ofns_desc }
@@ -60,10 +92,16 @@ class MapContainer extends React.Component{
                 levelOfOffense = { pin.law_cat_cd }
                 didComplete = { pin.crm_atpt_cptd_cd }
                 position = {{ lat:pin.latitude, lng:pin.longitude }}
-            />
+                />
+            }
         })
         return pins;
     }
+
+    // renderInfoGraphicsText = (props) => {
+
+    // }
+    
     render(){
         return <Map
             google={this.props.google}
@@ -72,8 +110,9 @@ class MapContainer extends React.Component{
             initialCenter={{ lat: 40.7, lng: -73.9 }} //increase lat, moves up increase lng moves right
             >
 
-            { this.renderMarkers() }
-            
+            { this.renderMarkers() }  
+            {/* { this.getPinsFromJson() } */}
+
             <InfoWindow
                 marker={this.state.activeMarker}
                 visible={this.state.showingInfoWindow}
@@ -89,6 +128,7 @@ class MapContainer extends React.Component{
         </Map>
     }
 }
+
 export default GoogleApiWrapper({
     apiKey: 'AIzaSyC91naZ4TM0LlmSTRqEUIYz7ak-JDbL3us '
 }) (MapContainer);
