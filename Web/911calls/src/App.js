@@ -37,7 +37,7 @@ export default class App extends React.Component {
         if(this.state.renderingMap){
             return <MapContainer whichMap = {this.state.displayWhichMap}/>;
         }else{
-            return <AboutMe />;
+            return<div style={{top: "10px", background: "#DCDCDC"}}> <AboutMe /> </div>;
         }
     }
 
@@ -62,7 +62,9 @@ export default class App extends React.Component {
                 /> 
                 {backdrop}
                 <main style={{overflowY: 'hidden' }}>
-                    {this.renderContent()}
+                    <div style = {{marginTop: '56px', height: '100%'}}>
+                        {this.renderContent()}
+                    </div>
                 </main>
             </div>
         );

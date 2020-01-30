@@ -2,7 +2,10 @@ import React from 'react';
 
 const AboutMeStyles = {
     zIndex: 1,
-    marginTop: 60
+    marginTop: 56,
+    marginLeft: 54,
+    marginRight: 54,
+    borderStyle: "none none solid none",
 }
 
 const AboutMeComponent = (props) => {
