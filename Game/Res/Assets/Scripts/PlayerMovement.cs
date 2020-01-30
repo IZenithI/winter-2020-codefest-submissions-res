@@ -4,26 +4,48 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //player movement
     public float moveSpeed = 10f;
-    public bool isGrounded = false;
+    private bool faceR = true;
+    Vector3 movement;
+
+    //player animation
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
+
+    //death and respawn and audio
+    AudioSource throwProjectileSound;
+
 
     void Start()
     {
+        //player animation
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
 
+        //projectile sound
+        throwProjectileSound = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        Jump();
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        transform.position += movement * Time.deltaTime * moveSpeed;
-    }
+        float moveX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
+        float moveY = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
 
-    void Jump()
-    {
-        if(Input.GetButtonDown("Jump") && isGrounded == true)
+        transform.Translate(moveX, moveY, 0);
+        if(faceR == false && moveX > 0 || faceR == true && moveX < 0)
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
+            Flip();
         }
     }
+
+    void Flip()
+    {
+        faceR = !faceR;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+    }
+
+
 }
