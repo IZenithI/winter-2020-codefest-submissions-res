@@ -62,7 +62,7 @@ export default class App extends React.Component {
                 /> 
                 {backdrop}
                 <main style={{overflowY: 'hidden' }}>
-                    <div style = {{marginTop: '56px', height: '100%'}}>
+                    <div style = {{marginTop: '56px', height: '100vh'}}>
                         {this.renderContent()}
                     </div>
                 </main>
