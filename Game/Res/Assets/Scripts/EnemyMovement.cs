@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnemyMovement : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     // Movement Variables
-    public float speed = 5;
+    public float speed;
     bool faceR = true;
 
     private Rigidbody2D rb2d;
@@ -22,11 +22,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-
-        Debug.Log(target.position.magnitude);
-        Debug.Log(transform.position.magnitude);
-
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
         if (faceR == true && target.position.magnitude > transform.position.magnitude || faceR == false && target.position.magnitude < transform.position.magnitude)
         {
             Flip();
@@ -42,7 +38,6 @@ public class EnemyMovement : MonoBehaviour
             SceneManager.LoadScene("TitleScreen");
         }
     }
-
     void Flip()
     {
         faceR = !faceR;
