@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5941233135457266841}
   - component: {fileID: 5941233135457266842}
   - component: {fileID: 5941233135457266840}
-  - component: {fileID: 5941233135457266823}
+  - component: {fileID: 7078075634372873040}
   m_Layer: 10
   m_Name: Burglar
   m_TagString: Enemy
@@ -265,7 +265,7 @@ PolygonCollider2D:
       - {x: 0.91999996, y: -1.545}
       - {x: 1.12, y: -1.4549999}
       - {x: 1.14, y: -1.395}
---- !u!114 &5941233135457266823
+--- !u!114 &7078075634372873040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

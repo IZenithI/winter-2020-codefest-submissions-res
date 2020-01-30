@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Enemy : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     // Movement Variables
-    public float speed;
+    public float speed = 3;
     bool faceR = true;
 
     private Rigidbody2D rb2d;
