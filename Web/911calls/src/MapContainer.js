@@ -5,8 +5,15 @@ import JsonPins from './nycRecentComplaintsData.json';
 
 const mapStyles = {
     position: 'absolute',
+<<<<<<< HEAD
     width: '100%',
     height: '100%',
+
+=======
+    width: '100vw',
+    marginTop: 56,
+    height: '92.5vh',
+>>>>>>> ebb9deb9e69f21b469df190921fe84fb770d0bb1
 }
 
 class MapContainer extends React.Component{
