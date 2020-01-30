@@ -23,11 +23,11 @@ class MapController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         view.backgroundColor = .blue
-        let camera = GMSCameraPosition.camera(withLatitude: 40.82741405, longitude: -73.87794578, zoom: 10)
+        let camera = GMSCameraPosition.camera(withLatitude: 40.82741405, longitude: -73.87794578, zoom: 9)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.delegate = self
         self.view = mapView
-        makeRemoveButton()
+
         makeZoomInButton()
         makeZoomOutButton()
         
@@ -63,20 +63,20 @@ class MapController: UIViewController, GMSMapViewDelegate {
     func addHeatmap()  {
         var list = [GMUWeightedLatLng]()
         do {
-            //        if let dbPath = Bundle.main.url(forResource: "nycData", withExtension: "db", subdirectory: "Data")
-            //        {
-            //            print("FOUND")
-            //            let data = try Data(contentsOf: dbPath)
-            //        }
-            // Get the data: latitude/longitude positions of police stations.
-            if let path = Bundle.main.url(forResource: "Complain-Data-LatLng", withExtension: "json") {
+            if let path = Bundle.main.url(forResource: "nycRecentComplaintsData", withExtension: "json", subdirectory: "Data") {
                 let data = try Data(contentsOf: path)
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
-                if let object = json as? [[String: Any]] {
+                if let object = json as? [[String: String]]{
                     for item in object {
-                        let lat = item["lat"]
-                        let lng = item["lng"]
-                        let coords = GMUWeightedLatLng(coordinate: CLLocationCoordinate2DMake(lat as! CLLocationDegrees, lng as! CLLocationDegrees), intensity: 2.0)
+                        var lat : Double = 0.0
+                        var lng : Double = 0.0
+                        if let latString = item["Latitude"]{
+                             lat = Double(latString) ?? 0.0
+                        }
+                        if let lngString = item["Longitude"] {
+                             lng = Double(lngString) ?? 0.0
+                        }
+                        let coords = GMUWeightedLatLng(coordinate: CLLocationCoordinate2DMake(lat , lng), intensity: 2.0)
                         list.append(coords)
                     }
                 } else {
@@ -90,27 +90,9 @@ class MapController: UIViewController, GMSMapViewDelegate {
         heatmapLayer.weightedData = list
     }
     
-    @objc
-    func removeHeatmap() {
-        heatmapLayer.map = nil
-        heatmapLayer = nil
-        // Disable the button to prevent subsequent calls, since heatmapLayer is now nil.
-        button.isEnabled = false
-    }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
-    }
-    
-    // Add a button to the view.
-    func makeRemoveButton() {
-        // A button to test removing the heatmap.
-        button = UIButton(frame: CGRect(x: 5, y: 150, width: 200, height: 35))
-        button.backgroundColor = .blue
-        button.alpha = 0.5
-        button.setTitle("Remove heatmap", for: .normal)
-        button.addTarget(self, action: #selector(removeHeatmap), for: .touchUpInside)
-        self.mapView.addSubview(button)
     }
     
     func makeZoomInButton() {
