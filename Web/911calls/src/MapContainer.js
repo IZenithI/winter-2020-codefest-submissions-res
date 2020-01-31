@@ -1,7 +1,8 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
-import JsonPins from './nycRecentComplaintsData.json';
-// import PoliceDepartments from './PoliceDepartments.json';
+
+import JsonPins from './Data/nycRecentComplaintsData.json';
+import PoliceDepartments from './Data/PoliceDepartments.json';
 
 const mapStyles = {
     position: 'absolute',
@@ -18,42 +19,27 @@ class MapContainer extends React.Component{
             activeMarker: {},
             selectedPlace: {},
             pins: [],
-            // policePins: []
+            policePins: [],
+            hospitalPins: []
         };
     }
 
     componentDidMount = () => {
-        // this.getPinsFromApi();
+        this.getPinsFromApi();
         this.getPinsFromJson();
-        // this.getPinsFromPoliceJson();
     }
-
     getPinsFromApi = () => {
-        fetch('https://data.cityofnewyork.us/resource/5uac-w243.json?')
+        //hospitals - https://data.cityofnewyork.us/Health/NYC-Health-Hospitals-patient-care-locations-2011/f7b6-v6v3/data
+        fetch('https://data.cityofnewyork.us/resource/f7b6-v6v3.json')
         .then(results => results.json())
-        .then(data => this.setState({ pins: data }))
+        .then(data => this.setState({ hospitalPins: data }))
     }
-
     getPinsFromJson = () => {
         this.setState({
-            pins: JsonPins
+            pins: JsonPins,
+            policePins: PoliceDepartments
         })
     }
-
-    // getPinsFromPoliceJson = () => {
-    //     let tempPins = PoliceDepartments.map((departentInfo,i) => {
-    //         return <Marker 
-    //             key = { i }
-    //             onClick = { this.onMarkerClick }
-    //             name = { departmentInfo.name }
-    //             address = { departmentInfo.address }
-    //             position = {{ lat:departmentInfo.latitude, lng:departmentInfo.longitude }}
-    //         />
-    //     })
-    //     this.setState({
-    //         policePins: tempPins;
-    //     })
-    // }
 
     onMarkerClick = (props, marker, e) => {
         this.setState({
@@ -71,34 +57,6 @@ class MapContainer extends React.Component{
         }
     };
 
-    renderMarkersFromApi = (props) => {
-        let tempPins = this.state.pins.map((pin, i) => {
-            if(this.props.whichMap === "default"){
-                return <Marker 
-                    key = { i } 
-                    onClick = { this.onMarkerClick }
-                    name = { pin.ofns_desc }
-                    date = { pin.cmplnt_fr_dt }
-                    levelOfOffense = { pin.law_cat_cd }
-                    didComplete = { pin.crm_atpt_cptd_cd }
-                    position = {{ lat:pin.latitude, lng:pin.longitude }}
-                />
-            }
-            else if(this.props.whichMap === pin.law_cat_cd){
-                return <Marker 
-                    key = { i } 
-                    onClick = { this.onMarkerClick }
-                    name = { pin.ofns_desc }
-                    date = { pin.cmplnt_fr_dt }
-                    levelOfOffense = { pin.law_cat_cd }
-                    didComplete = { pin.crm_atpt_cptd_cd }
-                    position = {{ lat:pin.latitude, lng:pin.longitude }}
-                />
-            }
-        })
-        return tempPins;
-    }
-
     renderMarkersFromJson = (props) => {
         let tempPins = this.state.pins.map((pin, i) => {
             if(this.props.whichMap === "default"){
@@ -110,9 +68,10 @@ class MapContainer extends React.Component{
                     levelOfOffense = { pin.LAW_CAT_CD }
                     didComplete = { pin.CRM_ATPT_CPTD_CD }
                     position = {{ lat:pin.Latitude, lng:pin.Longitude }}
+                    icon= {{ url: "http://labs.google.com/ridefinder/images/mm_20_green.png"}}    //changes to smaller green pins
                 />
             }
-            else if(this.props.whichMap === pin.LAW_CAT_CD || this.props.whichMap === pin.BORO_NM){
+            else if(this.props.whichMap === pin.LAW_CAT_CD || this.props.whichMap === pin.BORO_NM || pin.OFNS_DESC.includes(this.props.whichMap)){
                 return <Marker 
                     key = { i } 
                     onClick = { this.onMarkerClick }
@@ -121,14 +80,40 @@ class MapContainer extends React.Component{
                     levelOfOffense = { pin.LAW_CAT_CD }
                     didComplete = { pin.CRM_ATPT_CPTD_CD }
                     position = {{ lat:pin.Latitude, lng:pin.Longitude }}
+                    icon= {{ url: "http://labs.google.com/ridefinder/images/mm_20_green.png"}}    //changes to smaller green pins
                 />
             }
         })
         return tempPins;
     }
 
+    renderPoliceMarkersFromJson = () => {
+        let tempPins = this.state.policePins.map((pin, i) => {
+            return <Marker 
+                key = { i } 
+                position = {{ lat:pin.latitude, lng:pin.longitude }}
+                icon={{ url: "http://maps.google.com/mapfiles/kml/paddle/blu-stars.png" }}
+                style={{ zIndex:10 }}
+            />
+        })
+        return tempPins;
+    }
+
+    renderHospitalMarkersFromApi = () => {
+        let tempPins = this.state.hospitalPins.map((pin, i) => {
+            if(pin.facility_type === "Acute Care Hospital" || pin.facility_type === "Diagnostic & Treatment Center")
+            return <Marker
+                key = { i }
+                position = {{ lat:pin.latitude, lng:pin.longitude }}
+                // icon = {{ url: "http://maps.google.com/mapfiles/kml/paddle/grn-stars.png" }}
+                icon = {{ url: "http://maps.google.com/mapfiles/ms/micons/hospitals.png" }}
+            />
+        })
+        return tempPins;
+    }
+
     render(){
-        console.log(this.state.pins)
+        console.log(this.state.hospitalPins)
         return <Map
             google={this.props.google}
             zoom={12}
@@ -138,6 +123,8 @@ class MapContainer extends React.Component{
 
             {/* { this.renderMarkersFromApi() }   */}
             { this.renderMarkersFromJson() }
+            { this.renderPoliceMarkersFromJson() }
+            { this.renderHospitalMarkersFromApi() }
 
             <InfoWindow
                 marker={this.state.activeMarker}

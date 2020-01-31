@@ -1,0 +1,466 @@
+[
+    {
+        "name": "New York Police Department - 1st Precinct",
+        "Address": "16 Ericsson Place New York, NY, 10013",
+        "latitude": 40.720481872558594,
+        "longitude": -74.00714111328125
+    },
+    {
+        "name": "New York Police Department - 5th Precinct",
+        "Address": "19 Elizabeth Street New York, NY, 10013",
+        "latitude": 40.7161862,
+        "longitude": -73.9974896
+    },
+    {
+        "name": "New York Police Department - 6th Precinct",
+        "Address": "233 West 10th Street New York, NY, 10014",
+        "latitude": 40.7340416,
+        "longitude": -74.0054536
+    },
+    {
+        "name": "New York Police Department - 7th Precinct",
+        "Address": "19 1/2 Pitt Street New York, NY, 10002",
+        "latitude": 40.7162871,
+        "longitude": -73.9837703
+    },
+    {
+        "name": "New York Police Department - 9th Precinct",
+        "Address": "321 East 5 Street New York, NY, 10003",
+        "latitude": 40.726807,
+        "longitude": -73.988859
+    },
+    {
+        "name": "New York Police Department - 10th Precinct",
+        "Address": "230 West 20th Street New York, NY, 10011",
+        "latitude": 40.726854,
+        "longitude": -73.9887328
+    },
+    {
+        "name": "New York Police Department - 13th Precinct",
+        "Address": "230 East 21st Street New York, NY, 10010-7460",
+        "latitude": 40.741895,
+        "longitude": -73.989308
+    },
+    {
+        "name": "New York Police Department - Midtown South Precinct",
+        "Address": "357 West 35th Street New York, NY, 10001-1701",
+        "latitude": 40.7516588,
+        "longitude": -73.9901341
+    },
+    {
+        "name": "New York Police Department - 17th Precinct",
+        "Address": "167 East 51st Street New York, NY, 10022",
+        "latitude": 40.7567621,
+        "longitude": -73.9707859
+    },
+    {
+        "name": "New York Police Department - Midtown North Precinct",
+        "Address": "306 West 54th Street New York, NY, 10019-5102",
+        "latitude": 40.7649371,
+        "longitude": -73.9850825
+    },
+    {
+        "name": "New York Police Department - 19th Precinct",
+        "Address": "153 East 67th Street New York, NY, 10065",
+        "latitude": 40.7671456,
+        "longitude": -73.9638132
+    },
+    {
+        "name": "New York Police Department - 20th Precinct",
+        "Address": "120 West 82nd Street New York, NY, 10024-5502",
+        "latitude": 40.7841202,
+        "longitude": -73.9750749
+    },
+    {
+        "name": "New York Police Department - Central Park Precinct",
+        "Address": "86th and Transverse Rd New York, NY 10024",
+        "latitude": 40.788881,
+        "longitude": -73.977857
+    },
+    {
+        "name": "New York Police Department - 23rd Precinct",
+        "Address": "164 East 102 Street New York, NY, 10029-5721",
+        "latitude": 40.789489,
+        "longitude": -73.947954
+    },
+    {
+        "name": "New York Police Department - 24th Precinct",
+        "Address": "151 West 100th Street New York, NY, 10025-5146",
+        "latitude": 40.789489,
+        "longitude": -73.947954
+    },
+    {
+        "name": "New York Police Department - 25th Precinct",
+        "Address": "120 East 119th Street New York, NY, 10035-3921",
+        "latitude": 40.8006901,
+        "longitude": -73.941118
+    },
+    {
+        "name": "New York Police Department - 26th Precinct",
+        "Address": "520 West 126th Street New York, NY, 10027-2406",
+        "latitude": 40.81469,
+        "longitude": -73.9565359
+    },
+    {
+        "name": "New York Police Department - 28th Precinct",
+        "Address": "2271-89 8th Ave. New York, NY, 10027-5319",
+        "latitude": 40.806981,
+        "longitude": -73.9535
+    },
+    {
+        "name": "New York Police Department - 30th Precinct",
+        "Address": "451 West 151st Street New York, NY, 10031",
+        "latitude": 40.8288745,
+        "longitude": -73.9437777
+    },
+    {
+        "name": "New York Police Department - 32th Precinct",
+        "Address": "250 West 135th Street New York, NY, 10030-2802",
+        "latitude": 40.8157476,
+        "longitude": -73.9453969
+    },
+    {
+        "name": "New York Police Department - 33th Precinct",
+        "Address": "2207 Amsterdam Ave. New York, NY, 10032-2512",
+        "latitude": 40.8405867,
+        "longitude": -73.9357366
+    },
+    {
+        "name": "New York Police Department - 34th Precinct",
+        "Address": "4295 Broadway New York, NY, 10033-3729",
+        "latitude": 40.8515272,
+        "longitude": -73.9353732
+    },
+    {
+        "name": "New York Police Department - 40th Precinct",
+        "Address": "257 Alexander Ave. Bronx, NY, 10454-1133",
+        "latitude": 40.8103299,
+        "longitude": -73.925216
+    },
+    {
+        "name": "New York Police Department - 41st Precinct",
+        "Address": "1035 Longwood Ave. Bronx, NY, 10459-5204",
+        "latitude": 40.8163385,
+        "longitude": -73.8956745
+    },
+    {
+        "name": "New York Police Department - 42th Precinct",
+        "Address": "830 Washington Ave. Bronx, NY, 10451-4604",
+        "latitude": 40.8224638,
+        "longitude": -73.9112331
+    },
+    {
+        "name": "New York Police Department - 43th Precinct",
+        "Address": "900 Fteley Ave. Bronx, NY, 10473-4006",
+        "latitude": 40.822877,
+        "longitude": -73.8698072
+    },
+    {
+        "name": "New York Police Department - 44th Precinct",
+        "Address": "2 East 169 Street Bronx, NY, 10452-7800",
+        "latitude": 40.837872,
+        "longitude": -73.919696
+    },
+    {
+        "name": "New York Police Department - 45th Precinct",
+        "Address": "2877 Barkley Ave. Bronx, NY, 10465-1949",
+        "latitude": 40.8308431,
+        "longitude": -73.8273228
+    },
+    {
+        "name": "New York Police Department - 46th Precinct",
+        "Address": "2120 Ryer Ave. Bronx, NY, 10457-2919",
+        "latitude": 40.8540411,
+        "longitude": -73.9001068
+    },
+    {
+        "name": "New York Police Department - 47th Precinct",
+        "Address": "4111 Laconia Avenue Bronx, NY, 10466-4901",
+        "latitude": 40.8875,
+        "longitude": -73.8475
+    },
+    {
+        "name": "New York Police Department - 48th Precinct",
+        "Address": "450 Cross Bronx Expressway Bronx, NY, 10457-7401",
+        "latitude": 40.8442012,
+        "longitude": -73.8979807
+    },
+    {
+        "name": "New York Police Department - 49th Precinct",
+        "Address": "2121 Eastchester Road Bronx, NY, 10461-2251",
+        "latitude": 40.8560926,
+        "longitude": -73.8443828
+    },
+    {
+        "name": "New York Police Department - 50th Precinct",
+        "Address": "3450 Kingsbridge Ave. Bronx, NY, 10463-4004",
+        "latitude": 40.8834823,
+        "longitude": -73.9024173
+    },
+    {
+        "name": "New York Police Department - 52th Precinct",
+        "Address": "3016 Webster Ave. Bronx, NY, 10467",
+        "latitude": 40.8690538,
+        "longitude": -73.8796555
+    },
+    {
+        "name": "60",
+        "Address": "",
+        "latitude": 40.576515,
+        "longitude": -73.9760975
+    },
+    {
+        "name": "61",
+        "Address": "",
+        "latitude": 40.5759275,
+        "longitude": -73.9921967
+    },
+    {
+        "name": "62",
+        "Address": "",
+        "latitude": 40.6025772,
+        "longitude": -74.0029999
+    },
+    {
+        "name": "63",
+        "Address": "",
+        "latitude": 40.6279617,
+        "longitude": -73.9416067
+    },
+    {
+        "name": "66",
+        "Address": "",
+        "latitude": 40.6257785,
+        "longitude": -73.9913549
+    },
+    {
+        "name": "67",
+        "Address": "",
+        "latitude": 40.6487689,
+        "longitude": -73.95019
+    },
+    {
+        "name": "68",
+        "Address": "",
+        "latitude": 40.6390281,
+        "longitude": -74.0225602
+    },
+    {
+        "name": "69",
+        "Address": "",
+        "latitude": 40.6484905,
+        "longitude": -73.9049613
+    },
+    {
+        "name": "70",
+        "Address": "",
+        "latitude": 40.630353,
+        "longitude": -73.9737209
+    },
+    {
+        "name": "71",
+        "Address": "",
+        "latitude": 40.6645423,
+        "longitude": -73.947884
+    },
+    {
+        "name": "72",
+        "Address": "",
+        "latitude": 40.658188,
+        "longitude": -74.0010756
+    },
+    {
+        "name": "73",
+        "Address": "",
+        "latitude": 40.6707838,
+        "longitude": -73.9135433
+    },
+    {
+        "name": "75",
+        "Address": "",
+        "latitude": 40.6711703,
+        "longitude": -73.8814587
+    },
+    {
+        "name": "76",
+        "Address": "",
+        "latitude": 40.6838397,
+        "longitude": -74.0001931
+    },
+    
+    {
+        "name": "77",
+        "Address": "",
+        "latitude": 40.6747739,
+        "longitude": -73.9302453
+    },
+    {
+        "name": "78",
+        "Address": "",
+        "latitude": 40.6809072,
+        "longitude": -73.9741762
+    },
+    {
+        "name": "79",
+        "Address": "",
+        "latitude": 40.6888386,
+        "longitude": -73.9447061
+    },
+    {
+        "name": "81",
+        "Address": "",
+        "latitude": 40.6897012,
+        "longitude": -73.9242145
+    },
+    {
+        "name": "83",
+        "Address": "",
+        "latitude": 40.6981536,
+        "longitude": -73.9178713
+    },
+    {
+        "name": "84",
+        "Address": "",
+        "latitude": 40.6953224,
+        "longitude": -73.9830904
+    },
+    {
+        "name": "88",
+        "Address": "",
+        "latitude": 40.6900842,
+        "longitude": -73.9604845
+    },
+    {
+        "name": "90",
+        "Address": "",
+        "latitude": 40.7064072,
+        "longitude": -73.9505747
+    },
+    
+    {
+        "name": "94",
+        "Address": "",
+        "latitude": 40.726806,
+        "longitude": -73.953204
+    },
+    {
+        "name": "100",
+        "Address": "",
+        "latitude": 40.5862476,
+        "longitude": -73.8164846
+    },
+    {
+        "name": "101",
+        "Address": "",
+        "latitude": 40.6029503,
+        "longitude": -73.7499972
+    },
+    {
+        "name": "102",
+        "Address": "",
+        "latitude": 40.6938921,
+        "longitude": -73.8289052
+    },
+    {
+        "name": "103",
+        "Address": "",
+        "latitude": 40.7011895,
+        "longitude": -73.8078559
+    },
+    {
+        "name": "104",
+        "Address": "",
+        "latitude": 40.702337,
+        "longitude": -73.901368
+    },
+    {
+        "name": "105",
+        "Address": "",
+        "latitude": 40.7262893,
+        "longitude": -73.7351006
+    },
+    {
+        "name": "106",
+        "Address": "",
+        "latitude": 40.6821986,
+        "longitude": -73.8397494
+    },
+    {
+        "name": "107",
+        "Address": "",
+        "latitude": 40.7611915,
+        "longitude": -73.8218639
+    },
+    {
+        "name": "108",
+        "Address": "",
+        "latitude": 40.7430399,
+        "longitude": -73.9547439
+    },
+    {
+        "name": "109",
+        "Address": "",
+        "latitude": 40.7623522,
+        "longitude": -73.8270204
+    },
+    {
+        "name": "110",
+        "Address": "",
+        "latitude": 40.7452185,
+        "longitude": -73.8700718
+    },
+    {
+        "name": "111",
+        "Address": "",
+        "latitude": 40.7782354,
+        "longitude": -73.7730247
+    },
+    {
+        "name": "112",
+        "Address": "",
+        "latitude": 40.721988,
+        "longitude": -73.850321
+    },
+    {
+        "name": "113",
+        "Address": "",
+        "latitude": 40.679873,
+        "longitude": -73.9921967
+    },
+    {
+        "name": "114",
+        "Address": "",
+        "latitude": 40.767446,
+        "longitude": -73.9041923
+    },
+    {
+        "name": "115",
+        "Address": "",
+        "latitude": 40.7551366,
+        "longitude": -73.8893754
+    },
+    {
+        "name": "120",
+        "Address": "",
+        "latitude": 40.6446438,
+        "longitude": -74.0774176
+    },
+    {
+        "name": "121",
+        "Address": "",
+        "latitude": 40.6069237,
+        "longitude": -74.1623112
+    },
+    {
+        "name": "122",
+        "Address": "",
+        "latitude": 40.574106,
+        "longitude": -74.1055194
+    },
+    {
+        "name": "123",
+        "Address": "",
+        "latitude": 40.5118439,
+        "longitude": -74.2499783
+    }
+]

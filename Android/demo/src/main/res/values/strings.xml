@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Res-Demo</string>
+    <string name="input_text">Looking for…</string>
+    <string name="button_send">Go!</string>
+    <string name="police_stations">Calls to NYPD</string>
+    <string name="compliant_data">Calls to NYPD</string>
+    <string name="alternative_data">Alternate Data</string>
+    <string name="medicare">Alternate data</string>
+    <string name="attrib_format">Data from &lt;a href = "%s">data.cityofnewyork.us&lt;/a></string>
+    <string name="police_stations_url"><!--https://data.gov.au/dataset/police-station-locations/resource/76110b24-0f0a-4c29-9583-3f99eaba486c--></string>
+    <string name="medicare_url"><!--https://data.gov.au/dataset/location-of-medicare-offices/resource/5d38e1be-4011-49c4-8b8b-75405eeb1088--></string>
+    <string name="kml_url">https://raw.githubusercontent.com/googlemaps/android-maps-utils/70a77b066b8391da06a2d708792de8337bf5d3b6/demo/src/main/res/raw/campus.kml</string>
+    <string name="geojson_url">https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson</string>
+    <string-array name="heatmaps_datasets_array">
+        <item>@string/complaint_data</item>
+        <item>@string/alternative</item>
+    </string-array>
+    <string name="button_radius">Radius</string>
+    <string name="button_gradient">Gradient</string>
+    <string name="button_opacity">Opacity</string>
+    <string name="complaint_data">Calls to NYPD</string>
+    <string name="alternative">alternative data</string>
+    <string name="AppName">Cold-Data</string>
+</resources>
