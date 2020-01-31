@@ -20,7 +20,7 @@ const sideDrawer = props => {
                     <option value="6" onClick = {() => props.changeMapBrooklyn()}> Brooklyn </option>
                     <option value="7" onClick = {() => props.changeMapBronx()}> Bronx </option>
                     <option value="8" onClick = {() => props.changeMapStatenIsland()}> Staten Island </option>
-
+                    <option value="9" onClick = {() => props.changeMapLarceny()}> Larceny </option>
                 </select>
                 <div onClick = {() => props.toggleAboutMe()}>Meet The Team</div>
             </ul>

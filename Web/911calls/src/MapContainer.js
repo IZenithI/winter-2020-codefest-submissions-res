@@ -71,7 +71,7 @@ class MapContainer extends React.Component{
                     icon= {{ url: "http://labs.google.com/ridefinder/images/mm_20_green.png"}}    //changes to smaller green pins
                 />
             }
-            else if(this.props.whichMap === pin.LAW_CAT_CD || this.props.whichMap === pin.BORO_NM){
+            else if(this.props.whichMap === pin.LAW_CAT_CD || this.props.whichMap === pin.BORO_NM || pin.OFNS_DESC.includes(this.props.whichMap)){
                 return <Marker 
                     key = { i } 
                     onClick = { this.onMarkerClick }

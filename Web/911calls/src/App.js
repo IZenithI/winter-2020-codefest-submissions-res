@@ -64,6 +64,7 @@ export default class App extends React.Component {
                     changeMapBrooklyn= {() => this.setState({ displayWhichMap : "BROOKLYN" })}
                     changeMapBronx= {() => this.setState({ displayWhichMap : "BRONX" })}
                     changeMapStatenIsland= {() => this.setState({ displayWhichMap : "STATEN ISLAND" })}
+                    changeMapLarceny = {() => this.setState({ displayWhichMap : "LARCENY" })}
                 /> 
                 {backdrop}
                 <main style={{overflowY: 'hidden' }}>
