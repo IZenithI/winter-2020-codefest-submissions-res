@@ -11,12 +11,14 @@ public class EnemyMovement : MonoBehaviour
 
     private Rigidbody2D rb2d;
     private Transform target;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,6 +41,7 @@ public class EnemyMovement : MonoBehaviour
         }
         else if(collision.name == "Projectile(Clone)")
         {
+            animator.SetBool("isDead", true);
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }

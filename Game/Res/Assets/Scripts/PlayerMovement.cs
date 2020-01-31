@@ -35,17 +35,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && grounded == true)
         {
-            rb2d.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+            rb2d.AddForce(new Vector2(0, 7), ForceMode2D.Impulse);
+            animator.SetBool("isGrounded", false);
         }
         else if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
-            rb2d.AddForce(new Vector2(0, -10), ForceMode2D.Impulse);
+            rb2d.AddForce(new Vector2(0, -7), ForceMode2D.Impulse);
         }
 
         if(faceR == false && moveX > 0 || faceR == true && moveX < 0)
         {
             Flip();
         }
+        animator.SetBool("isGrounded", true);
     }
 
     void Flip()
@@ -58,19 +60,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter (Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            grounded = true;
+            animator.SetBool("isDead", true);
         }
     }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            grounded = false;
-        }
-    }
-
-
 }
