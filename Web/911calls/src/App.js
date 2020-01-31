@@ -59,6 +59,11 @@ export default class App extends React.Component {
                     changeMapMisdemeanor= {() => this.setState({ displayWhichMap : "MISDEMEANOR" })}
                     changeMapFelony= {() => this.setState({ displayWhichMap : "FELONY" })}
                     changeMapViolation= {() => this.setState({ displayWhichMap : "VIOLATION" })}
+                    changeMapQueens= {() => this.setState({ displayWhichMap : "QUEENS" })}
+                    changeMapManhattan= {() => this.setState({ displayWhichMap : "MANHATTAN" })}
+                    changeMapBrooklyn= {() => this.setState({ displayWhichMap : "BROOKLYN" })}
+                    changeMapBronx= {() => this.setState({ displayWhichMap : "BRONX" })}
+                    changeMapStatenIsland= {() => this.setState({ displayWhichMap : "STATEN ISLAND" })}
                 /> 
                 {backdrop}
                 <main style={{overflowY: 'hidden' }}>

@@ -13,10 +13,7 @@ public class PlayerMovement : MonoBehaviour
     //player animation
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    private Rigidbody2D rb2d;
-
-    //death and respawn and audio
-    AudioSource throwProjectileSound;
+    public Rigidbody2D rb2d;
 
 
     void Start()
@@ -24,20 +21,18 @@ public class PlayerMovement : MonoBehaviour
         //player animation
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-
-        //projectile sound
-        throwProjectileSound = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         float moveX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
-        float moveY = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
-        transform.Translate(moveX, moveY, 0);
+        //float moveY = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
+        //transform.Translate(moveX, moveY, 0);
+        transform.Translate(moveX, 0, 0);
 
-        animator.SetFloat("Speed", Mathf.Abs(moveX));
+        animator.SetFloat("speed", Mathf.Abs(moveX));
 
-        if (Input.GetKeyDown("W") && grounded == true)
+        if (Input.GetKeyDown("Jump") && grounded == true)
         {
             rb2d.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
         }

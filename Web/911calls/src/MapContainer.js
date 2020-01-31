@@ -5,15 +5,9 @@ import JsonPins from './nycRecentComplaintsData.json';
 
 const mapStyles = {
     position: 'absolute',
-<<<<<<< HEAD
-    width: '100%',
-    height: '100%',
-
-=======
     width: '100vw',
     marginTop: 56,
-    height: '92.5vh',
->>>>>>> ebb9deb9e69f21b469df190921fe84fb770d0bb1
+    height: '92.55vh',
 }
 
 class MapContainer extends React.Component{
@@ -118,7 +112,7 @@ class MapContainer extends React.Component{
                     position = {{ lat:pin.Latitude, lng:pin.Longitude }}
                 />
             }
-            else if(this.props.whichMap === pin.LAW_CAT_CD){
+            else if(this.props.whichMap === pin.LAW_CAT_CD || this.props.whichMap === pin.BORO_NM){
                 return <Marker 
                     key = { i } 
                     onClick = { this.onMarkerClick }

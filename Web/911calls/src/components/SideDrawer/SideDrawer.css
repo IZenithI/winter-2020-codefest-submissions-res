@@ -30,7 +30,7 @@
     justify-content: center;
 }
 
-.side-drawer a {
+.side-drawer div {
     margin: 0.5rem 0;
     color: white;
     text-decoration: none;

@@ -37,7 +37,13 @@ public class EnemyMovement : MonoBehaviour
             Destroy(collision.gameObject);
             SceneManager.LoadScene("TitleScreen");
         }
+        else if(collision.name == "Projectile(Clone)")
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
     }
+
     void Flip()
     {
         faceR = !faceR;
