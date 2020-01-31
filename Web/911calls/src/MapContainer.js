@@ -1,8 +1,8 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
-import JsonPins from './nycRecentComplaintsData.json';
-import PoliceDepartments from './PoliceDepartments.json';
+import JsonPins from './Data/nycRecentComplaintsData.json';
+import PoliceDepartments from './Data/PoliceDepartments.json';
 
 const mapStyles = {
     position: 'absolute',
@@ -28,19 +28,12 @@ class MapContainer extends React.Component{
         this.getPinsFromApi();
         this.getPinsFromJson();
     }
-
     getPinsFromApi = () => {
-        //911 calls - 1000 files
-        // fetch('https://data.cityofnewyork.us/resource/5uac-w243.json?')
-        // .then(results => results.json())
-        // .then(data => this.setState({ pins: data }))
-        
         //hospitals - https://data.cityofnewyork.us/Health/NYC-Health-Hospitals-patient-care-locations-2011/f7b6-v6v3/data
         fetch('https://data.cityofnewyork.us/resource/f7b6-v6v3.json')
         .then(results => results.json())
         .then(data => this.setState({ hospitalPins: data }))
     }
-
     getPinsFromJson = () => {
         this.setState({
             pins: JsonPins,
@@ -64,34 +57,6 @@ class MapContainer extends React.Component{
         }
     };
 
-    // renderMarkersFromApi = (props) => {
-    //     let tempPins = this.state.pins.map((pin, i) => {
-    //         if(this.props.whichMap === "default"){
-    //             return <Marker 
-    //                 key = { i } 
-    //                 onClick = { this.onMarkerClick }
-    //                 name = { pin.ofns_desc }
-    //                 date = { pin.cmplnt_fr_dt }
-    //                 levelOfOffense = { pin.law_cat_cd }
-    //                 didComplete = { pin.crm_atpt_cptd_cd }
-    //                 position = {{ lat:pin.latitude, lng:pin.longitude }}
-    //             />
-    //         }
-    //         else if(this.props.whichMap === pin.law_cat_cd){
-    //             return <Marker 
-    //                 key = { i } 
-    //                 onClick = { this.onMarkerClick }
-    //                 name = { pin.ofns_desc }
-    //                 date = { pin.cmplnt_fr_dt }
-    //                 levelOfOffense = { pin.law_cat_cd }
-    //                 didComplete = { pin.crm_atpt_cptd_cd }
-    //                 position = {{ lat:pin.latitude, lng:pin.longitude }}
-    //             />
-    //         }
-    //     })
-    //     return tempPins;
-    // }
-
     renderMarkersFromJson = (props) => {
         let tempPins = this.state.pins.map((pin, i) => {
             if(this.props.whichMap === "default"){
@@ -103,7 +68,7 @@ class MapContainer extends React.Component{
                     levelOfOffense = { pin.LAW_CAT_CD }
                     didComplete = { pin.CRM_ATPT_CPTD_CD }
                     position = {{ lat:pin.Latitude, lng:pin.Longitude }}
-                    icon= {{ url: "http://labs.google.com/ridefinder/images/mm_20_green.png"}}    //changes to smaller red pins
+                    icon= {{ url: "http://labs.google.com/ridefinder/images/mm_20_green.png"}}    //changes to smaller green pins
                 />
             }
             else if(this.props.whichMap === pin.LAW_CAT_CD || this.props.whichMap === pin.BORO_NM){
@@ -115,6 +80,7 @@ class MapContainer extends React.Component{
                     levelOfOffense = { pin.LAW_CAT_CD }
                     didComplete = { pin.CRM_ATPT_CPTD_CD }
                     position = {{ lat:pin.Latitude, lng:pin.Longitude }}
+                    icon= {{ url: "http://labs.google.com/ridefinder/images/mm_20_green.png"}}    //changes to smaller green pins
                 />
             }
         })

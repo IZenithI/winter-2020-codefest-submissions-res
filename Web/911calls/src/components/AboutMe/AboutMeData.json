@@ -1,7 +1,7 @@
 [
     {
         "name": "Howard Jiang",
-        "content": "Howard Jiang is going for",
+        "content": "Howard Jiang is currently CMO of Esports and Game Design Collective. He coordinates and promotes the non-for profit's events such as Waffle Games: a gaming convention that supports and celebrates all who are working towards a better future for games and their communities. As main project director of this project, he instructed each member of their duties based off their listed skillsets, set deadlines, meeting dates and times, goals, as well as omittions. With a passion for web design, he started this project with no prior knowledge of react, and is hoping to continue working on this project to hopefully spread it's message across: ",
         "imageSrc": ""
     },
     {
@@ -11,7 +11,7 @@
     },
     {
         "name": "Nathan V",
-        "content": "Nathan V is going for",
+        "content": "Raised in the city, Nathan grew up with an interest in Computer Science. At home, he took apart his parents and sister's computers just to see their insides. In 2015 he attended Information Technology High School and had a focus on Web Design. Attending Hunter he intends to major in Computer Science and Economics to in the future be a Software Developer and or C-Suite manager. His role on this project was creating the Android app the takes over a thousand latitudes and longitudes (associated with calls made to the NYPD) and mapped them on a Heat-Map using the Google SDK. He hopes to continue the development of this app to increase public awareness and safety.",
         "imageSrc": ""
     },
     {
@@ -25,13 +25,8 @@
         "imageSrc": ""
     },
     {
-        "name": "Vasyl llnytskyy",
-        "content": "Vasyl llnytskyy is going for",
-        "imageSrc": ""
-    },
-    {
         "name": "Christina Lee",
-        "content": "Christina Lee is going for",
+        "content": "Christina Lee is an upcoming sophomore pursuing a computer science major with a concentration in bioinformatics. She did all of the art assetst that the game was based off of.",
         "imageSrc": ""
     }
 ]
