@@ -11,19 +11,21 @@ public class EnemyMovement : MonoBehaviour
 
     private Rigidbody2D rb2d;
     private Transform target;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
-        if (faceR == true && target.position.magnitude > transform.position.magnitude || faceR == false && target.position.magnitude < transform.position.magnitude)
+        if (faceR == true && target.position.x < transform.position.x || faceR == false && target.position.x > transform.position.x)
         {
             Flip();
         }
@@ -39,6 +41,7 @@ public class EnemyMovement : MonoBehaviour
         }
         else if(collision.name == "Projectile(Clone)")
         {
+            animator.SetBool("isDead", true);
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
