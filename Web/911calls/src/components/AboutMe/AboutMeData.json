@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Howard Jiang",
+        "content": "Howard Jiang is currently CMO of Esports and Game Design Collective. He coordinates and promotes the non-for profit's events such as Waffle Games: a gaming convention that supports and celebrates all who are working towards a better future for games and their communities. As main project director of this project, he instructed each member of their duties based off their listed skillsets, set deadlines, meeting dates and times, goals, as well as omittions. With a passion for web design, he started this project with no prior knowledge of react, and is hoping to continue working on this project to hopefully spread it's message across: ",
+        "imageSrc": ""
+    },
+    {
+        "name": "Brian Guo",
+        "content": "Brian is an aspiring software developer, looking to improve his development skills. Going forward, in addition to improving his development skills, he would also like to engage in opportunities in the real world to gain more experience and potentially make a difference. In his free time, he enjoys video games and music.",
+        "imageSrc": ""
+    },
+    {
+        "name": "Nathan V",
+        "content": "Raised in the city, Nathan grew up with an interest in Computer Science. At home, he took apart his parents and sister's computers just to see their insides. In 2015 he attended Information Technology High School and had a focus on Web Design. Attending Hunter he intends to major in Computer Science and Economics to in the future be a Software Developer and or C-Suite manager. His role on this project was creating the Android app the takes over a thousand latitudes and longitudes (associated with calls made to the NYPD) and mapped them on a Heat-Map using the Google SDK. He hopes to continue the development of this app to increase public awareness and safety.",
+        "imageSrc": ""
+    },
+    {
+        "name": "Jason M",
+        "content": "Jason M is going for",
+        "imageSrc": ""
+    },
+    {
+        "name": "Arthur Mouradian",
+        "content": "From a young age Arthur has enjoyed solving problems and building things - he has found exactly that in computer science and software engineering. He is now constantly looking for challenges/problems/situations that help him expand his knowledge base and improve his code (or his general understanding of how technology works).",
+        "imageSrc": ""
+    },
+    {
+        "name": "Christina Lee",
+        "content": "Christina Lee is an upcoming sophomore pursuing a computer science major with a concentration in bioinformatics. She did all of the art assetst that the game was based off of.",
+        "imageSrc": ""
+    }
+]
