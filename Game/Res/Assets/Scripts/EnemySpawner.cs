@@ -8,10 +8,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] public GameObject burglar;
     [SerializeField] public GameObject murderer;
 
-    [SerializeField] float timer = 0f;
+    [SerializeField] public GameObject leftSpawner;
+    [SerializeField] float timer = 1f;
 
     //Initial max time to spawn randomly || Change as needed
-    [SerializeField] int maxTimeToSpawn = 11;
+    [SerializeField] int maxTimeToSpawn = 10;
+
+    bool waitForTime = false;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -32,12 +35,25 @@ public class EnemySpawner : MonoBehaviour
     private void checkedTimeForIncreaseSpawns()
     {
         int time = (int)timer;
-        //Every 15 seconds, decrease max time spawn | Change as needed
-        if(time % 15 == 0 && maxTimeToSpawn < 1)
+        //Every 10 seconds, decrease max time spawn | Change as needed
+        if(time % 5 == 0 && maxTimeToSpawn > 2 && !waitForTime)
         {
             //Change increments of time to spawn enemies | Change as needed
             maxTimeToSpawn -= 2;
+            StartCoroutine(WaitForNext());
         }
+        if (time % 13 == 0 && leftSpawner.activeSelf == false && !waitForTime)
+        {
+            leftSpawner.SetActive(true);
+            StartCoroutine(WaitForNext());
+        }
+    }
+
+    IEnumerator WaitForNext()
+    {
+        waitForTime = true;
+        yield return new WaitForSeconds(1f);
+        waitForTime = false;
     }
 
     IEnumerator RandomSpawn()
