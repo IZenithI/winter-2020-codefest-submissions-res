@@ -4,26 +4,68 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //player movement
     public float moveSpeed = 10f;
-    public bool isGrounded = false;
+    private bool faceR = true;
+    Vector3 movement;
+    private bool grounded = true;
+
+    //player animation
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
+    public Rigidbody2D rb2d;
+
 
     void Start()
     {
-
+        //player animation
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        Jump();
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        transform.position += movement * Time.deltaTime * moveSpeed;
-    }
+        float moveX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
+        //float moveY = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
+        //transform.Translate(moveX, moveY, 0);
+        transform.Translate(moveX, 0, 0);
 
-    void Jump()
-    {
-        if(Input.GetButtonDown("Jump") && isGrounded == true)
+        animator.SetFloat("speed", Mathf.Abs(moveX));
+
+        if (Input.GetKeyDown("Jump") && grounded == true)
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
+            rb2d.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+        }
+
+        if(faceR == false && moveX > 0 || faceR == true && moveX < 0)
+        {
+            Flip();
         }
     }
+
+    void Flip()
+    {
+        faceR = !faceR;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+    }
+
+    private void OnCollisionEnter (Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            grounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            grounded = false;
+        }
+    }
+
+
 }

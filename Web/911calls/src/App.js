@@ -37,7 +37,7 @@ export default class App extends React.Component {
         if(this.state.renderingMap){
             return <MapContainer whichMap = {this.state.displayWhichMap}/>;
         }else{
-            return <AboutMe />;
+            return<div style={{top: "10px", background: "#DCDCDC"}}> <AboutMe /> </div>;
         }
     }
 
@@ -59,10 +59,17 @@ export default class App extends React.Component {
                     changeMapMisdemeanor= {() => this.setState({ displayWhichMap : "MISDEMEANOR" })}
                     changeMapFelony= {() => this.setState({ displayWhichMap : "FELONY" })}
                     changeMapViolation= {() => this.setState({ displayWhichMap : "VIOLATION" })}
+                    changeMapQueens= {() => this.setState({ displayWhichMap : "QUEENS" })}
+                    changeMapManhattan= {() => this.setState({ displayWhichMap : "MANHATTAN" })}
+                    changeMapBrooklyn= {() => this.setState({ displayWhichMap : "BROOKLYN" })}
+                    changeMapBronx= {() => this.setState({ displayWhichMap : "BRONX" })}
+                    changeMapStatenIsland= {() => this.setState({ displayWhichMap : "STATEN ISLAND" })}
                 /> 
                 {backdrop}
                 <main style={{overflowY: 'hidden' }}>
-                    {this.renderContent()}
+                    <div style = {{height: '100%', bottom: "0px"}}>
+                        {this.renderContent()}
+                    </div>
                 </main>
             </div>
         );
