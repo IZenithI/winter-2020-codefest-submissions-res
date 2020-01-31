@@ -34,7 +34,6 @@
         "Address": "230 West 20th Street New York, NY, 10011",
         "lonitude": 40.726854,
         "latitude": -73.9887328
-<<<<<<< HEAD
     },
     {
         "name": "60",
@@ -296,7 +295,4 @@
         "lonitude": -74.2499783,
         "latitude": 40.5118439
     }
-=======
-    }
 ]
->>>>>>> f970541a11816f40fd95c2a9214c23dcc46df33e
