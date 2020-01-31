@@ -2,297 +2,297 @@
     {
         "name": "New York Police Department - 1st presinct",
         "Address": "16 Ericsson Place New York, NY, 10013",
-        "lonitude": 40.720481872558594,
+        "longitude": 40.720481872558594,
         "latitude": -74.00714111328125
     },
     {
         "name": "New York Police Department - 5th presinct",
         "Address": "19 Elizabeth Street New York, NY, 10013",
-        "lonitude": 40.7161862,
+        "longitude": 40.7161862,
         "latitude": -73.9974896
     },
     {
         "name": "New York Police Department - 6th presinct",
         "Address": "233 West 10th Street New York, NY, 10014",
-        "lonitude": 40.7340416,
+        "longitude": 40.7340416,
         "latitude": -74.0054536
     },
     {
         "name": "New York Police Department - 7th presinct",
         "Address": "19 1/2 Pitt Street New York, NY, 10002",
-        "lonitude": 40.7162871,
+        "longitude": 40.7162871,
         "latitude": -73.9837703
     },
     {
         "name": "New York Police Department - 9th presinct",
         "Address": "321 East 5 Street New York, NY, 10003",
-        "lonitude": 40.726807,
+        "longitude": 40.726807,
         "latitude": -73.988859
     },
     {
         "name": "New York Police Department - 10th presinct",
         "Address": "230 West 20th Street New York, NY, 10011",
-        "lonitude": 40.726854,
+        "longitude": 40.726854,
         "latitude": -73.9887328
     },
     {
         "name": "60",
         "Address": "",
-        "lonitude": 40.576515,
+        "longitude": 40.576515,
         "latitude": -73.9760975
     },
     {
         "name": "61",
         "Address": "",
-        "lonitude": -73.9921967,
+        "longitude": -73.9921967,
         "latitude": 40.5759275
     },
     {
         "name": "62",
         "Address": "",
-        "lonitude": -74.0029999,
+        "longitude": -74.0029999,
         "latitude": 40.6025772
     },
     {
         "name": "63",
         "Address": "",
-        "lonitude": -73.9416067,
+        "longitude": -73.9416067,
         "latitude": 40.6279617
     },
     {
         "name": "66",
         "Address": "",
-        "lonitude": -73.9913549,
+        "longitude": -73.9913549,
         "latitude": 40.6257785
     },
     {
         "name": "67",
         "Address": "",
-        "lonitude": -73.95019,
+        "longitude": -73.95019,
         "latitude": 40.6487689
     },
     {
         "name": "68",
         "Address": "",
-        "lonitude": -74.0225602,
+        "longitude": -74.0225602,
         "latitude": 40.6390281
     },
     {
         "name": "69",
         "Address": "",
-        "lonitude": -73.9049613,
+        "longitude": -73.9049613,
         "latitude": 40.6484905
     },
     {
         "name": "70",
         "Address": "",
-        "lonitude": -73.9737209,
+        "longitude": -73.9737209,
         "latitude": 40.630353
     },
     {
         "name": "71",
         "Address": "",
-        "lonitude": -73.947884,
+        "longitude": -73.947884,
         "latitude": 40.6645423
     },
     {
         "name": "72",
         "Address": "",
-        "lonitude": -74.0010756,
+        "longitude": -74.0010756,
         "latitude": 40.658188
     },
     {
         "name": "73",
         "Address": "",
-        "lonitude": -73.9135433,
+        "longitude": -73.9135433,
         "latitude": 40.6707838
     },
     {
         "name": "75",
         "Address": "",
-        "lonitude": -73.8814587,
+        "longitude": -73.8814587,
         "latitude": 40.6711703
     },
     {
         "name": "76",
         "Address": "",
-        "lonitude": -74.0001931,
+        "longitude": -74.0001931,
         "latitude": 40.6838397
     },
     
     {
         "name": "77",
         "Address": "",
-        "lonitude": -73.9302453,
+        "longitude": -73.9302453,
         "latitude": 40.6747739
     },
     {
         "name": "78",
         "Address": "",
-        "lonitude": -73.9741762,
+        "longitude": -73.9741762,
         "latitude": 40.6809072
     },
     {
         "name": "79",
         "Address": "",
-        "lonitude": -73.9447061,
+        "longitude": -73.9447061,
         "latitude": 40.6888386
     },
     {
         "name": "81",
         "Address": "",
-        "lonitude": -73.9242145,
+        "longitude": -73.9242145,
         "latitude": 40.6897012
     },
     {
         "name": "83",
         "Address": "",
-        "lonitude": -73.9178713,
+        "longitude": -73.9178713,
         "latitude": 40.6981536
     },
     {
         "name": "84",
         "Address": "",
-        "lonitude": -73.9830904,
+        "longitude": -73.9830904,
         "latitude": 40.6953224
     },
     {
         "name": "88",
         "Address": "",
-        "lonitude": -73.9604845,
+        "longitude": -73.9604845,
         "latitude": 40.6900842
     },
     {
         "name": "90",
         "Address": "",
-        "lonitude": -73.9505747,
+        "longitude": -73.9505747,
         "latitude": 40.7064072
     },
     
     {
         "name": "94",
         "Address": "",
-        "lonitude": -73.953204,
+        "longitude": -73.953204,
         "latitude": 40.726806
     },
     {
         "name": "100",
         "Address": "",
-        "lonitude": -73.8164846,
+        "longitude": -73.8164846,
         "latitude": 40.5862476
     },
     {
         "name": "101",
         "Address": "",
-        "lonitude": -73.7499972,
+        "longitude": -73.7499972,
         "latitude": 40.6029503
     },
     {
         "name": "102",
         "Address": "",
-        "lonitude": -73.8289052,
+        "longitude": -73.8289052,
         "latitude": 40.6938921
     },
     {
         "name": "103",
         "Address": "",
-        "lonitude": -73.8078559,
+        "longitude": -73.8078559,
         "latitude": 40.7011895
     },
     {
         "name": "104",
         "Address": "",
-        "lonitude": -73.901368,
+        "longitude": -73.901368,
         "latitude": 40.702337
     },
     {
         "name": "105",
         "Address": "",
-        "lonitude": -73.7351006,
+        "longitude": -73.7351006,
         "latitude": 40.7262893
     },
     {
         "name": "106",
         "Address": "",
-        "lonitude": -73.8397494,
+        "longitude": -73.8397494,
         "latitude": 40.6821986
     },
     {
         "name": "107",
         "Address": "",
-        "lonitude": -73.8218639,
+        "longitude": -73.8218639,
         "latitude": 40.7611915
     },
     {
         "name": "108",
         "Address": "",
-        "lonitude": -73.9547439,
+        "longitude": -73.9547439,
         "latitude": 40.7430399
     },
     {
         "name": "109",
         "Address": "",
-        "lonitude": -73.8270204,
+        "longitude": -73.8270204,
         "latitude": 40.7623522
     },
     {
         "name": "110",
         "Address": "",
-        "lonitude": -73.8700718,
+        "longitude": -73.8700718,
         "latitude": 40.7452185
     },
     {
         "name": "111",
         "Address": "",
-        "lonitude": -73.7730247,
+        "longitude": -73.7730247,
         "latitude": 40.7782354
     },
     {
         "name": "112",
         "Address": "",
-        "lonitude": -73.850321,
+        "longitude": -73.850321,
         "latitude": 40.721988
     },
     {
         "name": "113",
         "Address": "",
-        "lonitude": -73.9921967,
+        "longitude": -73.9921967,
         "latitude": 40.679873
     },
     {
         "name": "114",
         "Address": "",
-        "lonitude": -73.9041923,
+        "longitude": -73.9041923,
         "latitude": 40.767446
     },
     {
         "name": "115",
         "Address": "",
-        "lonitude": -73.8893754,
+        "longitude": -73.8893754,
         "latitude": 40.7551366
     },
     {
         "name": "120",
         "Address": "",
-        "lonitude": -74.0774176,
+        "longitude": -74.0774176,
         "latitude": 40.6446438
     },
     {
         "name": "121",
         "Address": "",
-        "lonitude": -74.1623112,
+        "longitude": -74.1623112,
         "latitude": 40.6069237
     },
     {
         "name": "122",
         "Address": "",
-        "lonitude": -74.1055194,
+        "longitude": -74.1055194,
         "latitude": 40.574106
     },
     {
         "name": "123",
         "Address": "",
-        "lonitude": -74.2499783,
+        "longitude": -74.2499783,
         "latitude": 40.5118439
     }
 ]
