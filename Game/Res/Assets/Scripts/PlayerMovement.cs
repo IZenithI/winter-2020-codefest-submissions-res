@@ -21,9 +21,6 @@ public class PlayerMovement : MonoBehaviour
         //player animation
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-
-        //player sprite
-        rb2d = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -35,18 +32,12 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("speed", Mathf.Abs(moveX));
 
-        if (Input.GetButtonDown("Jump") && grounded == true)
+        if (Input.GetKeyDown("Jump") && grounded == true)
         {
             rb2d.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
         }
 
-        //Faster drop
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            rb2d.AddForce(new Vector2(0, -10), ForceMode2D.Impulse);
-        }
-
-        if (faceR == false && moveX > 0 || faceR == true && moveX < 0)
+        if(faceR == false && moveX > 0 || faceR == true && moveX < 0)
         {
             Flip();
         }

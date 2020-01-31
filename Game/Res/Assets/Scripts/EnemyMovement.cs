@@ -23,8 +23,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
-        //if (faceR == true && target.position.magnitude > transform.position.magnitude || faceR == false && target.position.magnitude < transform.position.magnitude)
-        if (faceR == true && target.position.x < transform.position.x || faceR == false && target.position.x > transform.position.x)
+        if (faceR == true && target.position.magnitude > transform.position.magnitude || faceR == false && target.position.magnitude < transform.position.magnitude)
         {
             Flip();
         }
